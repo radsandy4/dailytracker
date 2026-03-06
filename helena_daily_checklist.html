@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helena · Daily Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --cream-dark: #EDE7D9;
+    --ink: #1A1510;
+    --ink-mid: #3D3530;
+    --ink-light: #7A6F65;
+    --accent: #C4401A;
+    --gold: #B8943A;
+    --rule: #C8BFB0;
+    --check-green: #2A6644;
+    --link-blue: #1A4A7A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--cream);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 20px 18px 36px;
+    background-image: repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(180,165,140,0.07) 27px,rgba(180,165,140,0.07) 28px);
+  }
+
+  /* ── STICKY PIN BANNER (shown on first open) ── */
+  .pin-banner {
+    background: var(--link-blue);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 8px 12px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    line-height: 1.5;
+  }
+  .pin-banner.hidden { display: none; }
+  .pin-banner strong { color: #A8C8F0; }
+  .pin-banner-close {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 3px 7px;
+    border-radius: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pin-banner-close:hover { background: rgba(255,255,255,0.25); }
+
+  /* ── POP OUT BUTTON — always visible, prominent ── */
+  .popout-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cream-dark);
+    border: 1.5px solid var(--link-blue);
+    border-radius: 3px;
+    padding: 7px 12px;
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+  .popout-bar-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+  .popout-bar-text strong { color: var(--ink); }
+  .popout-btn {
+    background: var(--link-blue);
+    color: white;
+    border: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .popout-btn:hover { background: #0E3260; }
+  /* hide popout bar if already in popup window */
+  .in-popup .popout-bar { display: none; }
+
+  /* ── MASTHEAD ── */
+  .masthead { border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 8px 0 6px; margin-bottom: 3px; }
+  .masthead-vol { font-family:'DM Mono',monospace; font-size:8.5px; letter-spacing:.14em; color:var(--ink-light); text-transform:uppercase; display:flex; justify-content:space-between; margin-bottom:5px; }
+  .masthead h1 { font-family:'Playfair Display',Georgia,serif; font-weight:900; font-size:clamp(22px,4.5vw,38px); letter-spacing:-.02em; line-height:1; text-align:center; }
+  .masthead h1 em { font-style:italic; color:var(--accent); }
+  .masthead-rule { border:none; border-top:1px solid var(--ink); margin-top:7px; }
+
+  /* ── DATELINE ── */
+  .dateline { display:flex; justify-content:space-between; padding:5px 0; border-bottom:2px double var(--rule); margin-bottom:14px; font-family:'DM Mono',monospace; font-size:9px; color:var(--ink-light); letter-spacing:.07em; text-transform:uppercase; }
+  #today-date { color:var(--ink); font-weight:500; }
+
+  /* ── PROGRESS ── */
+  .progress-strip { background:var(--cream-dark); border:1px solid var(--rule); border-radius:2px; padding:8px 12px; margin-bottom:14px; display:flex; align-items:center; gap:12px; }
+  .progress-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-light); white-space:nowrap; flex-shrink:0; }
+  .progress-bar-outer { flex:1; height:5px; background:var(--rule); border-radius:3px; overflow:hidden; }
+  .progress-bar-inner { height:100%; background:linear-gradient(90deg,var(--check-green),#4A9B6F); border-radius:3px; transition:width 0.5s cubic-bezier(0.4,0,0.2,1); width:0%; }
+  .progress-count { font-family:'DM Mono',monospace; font-size:11px; font-weight:500; color:var(--ink); white-space:nowrap; min-width:40px; text-align:right; }
+
+  /* ── SECTIONS ── */
+  .section { margin-bottom:14px; }
+  .section-header { display:flex; align-items:baseline; gap:8px; margin-bottom:6px; padding-bottom:4px; border-bottom:2px solid var(--ink); }
+  .section-number { font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:12px; color:var(--accent); }
+  .section-title { font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:14px; color:var(--ink); flex:1; }
+  .section-count { font-family:'DM Mono',monospace; font-size:8.5px; color:var(--ink-light); letter-spacing:.1em; text-transform:uppercase; }
+
+  /* ── TASK ITEMS ── */
+  .task-list { display:flex; flex-direction:column; }
+
+  .task-item {
+    display:grid;
+    /* checkbox | body | link-button */
+    grid-template-columns: 20px 1fr auto;
+    align-items:center;
+    gap:10px;
+    padding:9px 6px 9px 2px;
+    border-bottom:1px solid var(--rule);
+    border-radius:2px;
+    transition:background 0.15s;
+    position:relative;
+  }
+  .task-item:last-child { border-bottom:none; }
+  .task-item:hover { background:rgba(196,64,26,0.03); }
+
+  /* Checkbox — only this triggers done */
+  .task-checkbox {
+    width:18px; height:18px;
+    border:2px solid var(--ink-mid);
+    border-radius:2px;
+    display:flex; align-items:center; justify-content:center;
+    transition:all 0.2s;
+    background:white;
+    cursor:pointer;
+    flex-shrink: 0;
+  }
+  .task-item.done .task-checkbox { background:var(--check-green); border-color:var(--check-green); }
+  .task-checkbox svg { opacity:0; transform:scale(0.4) rotate(-10deg); transition:all 0.2s cubic-bezier(0.175,0.885,0.32,1.275); pointer-events:none; }
+  .task-item.done .task-checkbox svg { opacity:1; transform:scale(1) rotate(0deg); }
+
+  /* Task body text */
+  .task-body { min-width:0; }
+  .task-title { font-family:'Libre Baskerville',Georgia,serif; font-size:12.5px; line-height:1.35; color:var(--ink); transition:all 0.2s; display:block; }
+  .task-item.done .task-title { text-decoration:line-through; color:var(--ink-light); }
+  .task-meta { font-family:'DM Mono',monospace; font-size:9px; color:var(--ink-light); margin-top:2px; letter-spacing:.03em; }
+  .task-tag { display:inline-block; font-family:'DM Mono',monospace; font-size:8px; letter-spacing:.08em; text-transform:uppercase; padding:1px 5px; border-radius:2px; margin-top:3px; }
+  .tag-apply { background:rgba(184,148,58,0.12); color:var(--gold); border:1px solid rgba(184,148,58,0.28); }
+  .tag-network { background:rgba(196,64,26,0.08); color:var(--accent); border:1px solid rgba(196,64,26,0.22); }
+
+  /* ── OPEN SITE BUTTON — right column, always visible ── */
+  .task-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--link-blue);
+    color: white;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.15s, transform 0.1s;
+    cursor: pointer;
+    border: none;
+  }
+  .task-open-btn:hover { background: #0E3260; transform: scale(1.03); }
+  .task-item.done .task-open-btn { background: var(--check-green); }
+
+  /* ── DONE BANNER ── */
+  .all-done-banner { display:none; text-align:center; padding:9px; background:var(--check-green); color:white; font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:13px; margin-bottom:14px; border-radius:2px; }
+  .all-done-banner.visible { display:block; }
+
+  /* ── FOOTER ── */
+  .footer { margin-top:16px; border-top:1px solid var(--ink); padding-top:8px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-motto { font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:10px; color:var(--ink-light); }
+  .reset-btn { font-family:'DM Mono',monospace; font-size:8.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-light); background:none; border:1px solid var(--rule); padding:3px 8px; cursor:pointer; border-radius:2px; transition:all 0.15s; }
+  .reset-btn:hover { background:var(--ink); color:var(--cream); border-color:var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- Pop-out bar — click to float this as a pinned window -->
+<div class="popout-bar" id="popout-bar">
+  <div class="popout-bar-text">
+    <strong>📌 Pin to screen:</strong> Click "Pop Out" → a small window opens in your screen corner.<br>
+    Mac: Dock right-click → Options → <strong>All Desktops</strong> &nbsp;|&nbsp; Windows: <strong>Win+Ctrl+T</strong> (PowerToys)
+  </div>
+  <button class="popout-btn" onclick="openSticky()">📌 Pop Out</button>
+</div>
+
+<div class="masthead">
+  <div class="masthead-vol">
+    <span>Helena Sanders · Columbia ChemE MS</span>
+    <span>Daily Edition</span>
+  </div>
+  <h1>The <em>Job Search</em> Chronicle</h1>
+  <hr class="masthead-rule">
+</div>
+
+<div class="dateline">
+  <span id="today-date">—</span>
+  <span>5 Applications · 3 Outreach · NYC</span>
+</div>
+
+<div class="all-done-banner" id="done-banner">🎉 Full day's work complete — well done, Helena!</div>
+
+<div class="progress-strip">
+  <span class="progress-label">Today</span>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" id="progress-bar"></div></div>
+  <span class="progress-count" id="progress-count">0 / 8</span>
+</div>
+
+<!-- ── SECTION I: APPLICATIONS ── -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">I.</span>
+    <span class="section-title">Applications to Submit</span>
+    <span class="section-count">5 roles</span>
+  </div>
+  <div class="task-list">
+
+    <div class="task-item">
+      <div class="task-checkbox" onclick="toggle(this.parentElement)">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="task-body">
+        <span class="task-title">Associate Scientist, Biologics Process Development — Genentech</span>
+        <div class="task-meta">South San Francisco / Remote</div>
+        <span class="task-tag tag-apply">Apply</span>
+      </div>
+      <a class="task-open-btn" href="https://www.gene.com/careers" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M7 2H10V5M10 2L5.5 6.5M3 3H2C1.45 3 1 3.45 1 4V10C1 10.55 1.45 11 2 11H8C8.55 11 9 10.55 9 10V9" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Open Site
+      </a>
+    </div>
+
+    <div class="task-item">
+      <div class="task-checkbox" onclick="toggle(this.parentElement)">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="task-body">
+        <span class="task-title">Process Development Scientist — Regeneron</span>
+        <div class="task-meta">Tarrytown, NY (NYC commutable)</div>
+        <span class="task-tag tag-apply">Apply</span>
+      </div>
+      <a class="task-open-btn" href="https://careers.regeneron.com/jobs?keywords=process+development" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M7 2H10V5M10 2L5.5 6.5M3 3H2C1.45 3 1 3.45 1 4V10C1 10.55 1.45 11 2 11H8C8.55 11 9 10.55 9 10V9" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Open Site
+      </a>
+    </div>
+
+    <div class="task-item">
+      <div class="task-checkbox" onclick="toggle(this.parentElement)">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="task-body">
+        <span class="task-title">Life Sciences Consultant, Associate/Analyst — McKinsey & Co.</span>
+        <div class="task-meta">New York, NY</div>
+        <span class="task-tag tag-apply">Apply</span>
+      </div>
+      <a class="task-open-btn" href="https://www.mckinsey.com/careers/search-jobs?query=life+sciences&location=New+York" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M7 2H10V5M10 2L5.5 6.5M3 3H2C1.45 3 1 3.45 1 4V10C1 10.55 1.45 11 2 11H8C8.55 11 9 10.55 9 10V9" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Open Site
+      </a>
+    </div>
+
+    <div class="task-item">
+      <div class="task-checkbox" onclick="toggle(this.parentElement)">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="task-body">
+        <span class="task-title">Scientist I, Antibody Engineering — Relay Therapeutics</span>
+        <div class="task-meta">Cambridge, MA / NYC hybrid</div>
+        <span class="task-tag tag-apply">Apply</span>
+      </div>
+      <a class="task-open-btn" href="https://relaytx.com/careers" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M7 2H10V5M10 2L5.5 6.5M3 3H2C1.45 3 1 3.45 1 4V10C1 10.55 1.45 11 2 11H8C8.55 11 9 10.55 9 10V9" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Open Site
+      </a>
+    </div>
+
+    <div class="task-item">
+      <div class="task-checkbox" onclick="toggle(this.parentElement)">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="task-body">
+        <span class="task-title">Associate Scientist, Immunology Research — Bristol Myers Squibb</span>
+        <div class="task-meta">Summit, NJ (30 min from NYC)</div>
+        <span class="task-tag tag-apply">Apply</span>
+      </div>
+      <a class="task-open-btn" href="https://careers.bms.com/jobs?keywords=associate+scientist+immunology&location=Summit" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M7 2H10V5M10 2L5.5 6.5M3 3H2C1.45 3 1 3.45 1 4V10C1 10.55 1.45 11 2 11H8C8.55 11 9 10.55 9 10V9" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Open Site
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── SECTION II: NETWORKING ── -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">II.</span>
+    <span class="section-title">Networking Outreach</span>
+    <span class="section-count">3 contacts</span>
+  </div>
+  <div class="task-list">
+
+    <div class="task-item">
+      <div class="task-checkbox" onclick="toggle(this.parentElement)">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="task-body">
+        <span class="task-title">Dr. Cynthia Collins, CEO — Ginkgo Bioworks</span>
+        <div class="task-meta">MIT ChemE PhD · connect + personalized note</div>
+        <span class="task-tag tag-network">Network</span>
+      </div>
+      <a class="task-open-btn" href="https://www.linkedin.com/in/cynthia-collins-5bb9a2/" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M7 2H10V5M10 2L5.5 6.5M3 3H2C1.45 3 1 3.45 1 4V10C1 10.55 1.45 11 2 11H8C8.55 11 9 10.55 9 10V9" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <div class="task-item">
+      <div class="task-checkbox" onclick="toggle(this.parentElement)">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="task-body">
+        <span class="task-title">Dr. Noubar Afeyan, Founder — Flagship Pioneering</span>
+        <div class="task-meta">Portfolio = Relay, Moderna + 30 others</div>
+        <span class="task-tag tag-network">Network</span>
+      </div>
+      <a class="task-open-btn" href="https://www.linkedin.com/in/noubar-afeyan-7697b01/" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M7 2H10V5M10 2L5.5 6.5M3 3H2C1.45 3 1 3.45 1 4V10C1 10.55 1.45 11 2 11H8C8.55 11 9 10.55 9 10V9" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <div class="task-item">
+      <div class="task-checkbox" onclick="toggle(this.parentElement)">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="task-body">
+        <span class="task-title">Columbia Biotech Alumni — 3 targeted connections</span>
+        <div class="task-meta">Filter by Regeneron / BMS / McKinsey, grads 2015–2023</div>
+        <span class="task-tag tag-network">Network</span>
+      </div>
+      <a class="task-open-btn" href="https://www.linkedin.com/school/columbia-university/people/?keywords=regeneron%20OR%20bristol%20myers%20OR%20mckinsey" target="_blank">
+        <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M7 2H10V5M10 2L5.5 6.5M3 3H2C1.45 3 1 3.45 1 4V10C1 10.55 1.45 11 2 11H8C8.55 11 9 10.55 9 10V9" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Alumni
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <span class="footer-motto">"Every application is a door."</span>
+  <button class="reset-btn" onclick="resetAll()">Reset Day</button>
+</div>
+
+<script>
+  // ── Setup ──
+  document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-US',{
+    weekday:'long', year:'numeric', month:'long', day:'numeric'
+  }).toUpperCase();
+
+  // If this is a popup window, hide the pop-out bar (already popped out)
+  if (window.opener) {
+    document.getElementById('popout-bar').classList.add('hidden');
+  }
+
+  // ── Storage ──
+  const KEY = 'helena_checklist_v5';
+  const getState = () => { try { return JSON.parse(localStorage.getItem(KEY)||'{}'); } catch(e){return{};} };
+  const saveState = s => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch(e){} };
+  const getId = el => (el.querySelector('.task-title')?.textContent||'').trim().substring(0,40);
+
+  // ── Toggle checkbox ──
+  function toggle(taskEl) {
+    taskEl.classList.toggle('done');
+    const s = getState();
+    s[getId(taskEl)] = taskEl.classList.contains('done');
+    saveState(s);
+    updateProgress();
+  }
+
+  // ── Progress bar ──
+  function updateProgress() {
+    const all = document.querySelectorAll('.task-item');
+    const done = document.querySelectorAll('.task-item.done');
+    const pct = all.length ? (done.length / all.length) * 100 : 0;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('progress-count').textContent = done.length + ' / ' + all.length;
+    document.getElementById('done-banner').classList.toggle('visible', done.length === all.length && all.length > 0);
+  }
+
+  // ── Reset ──
+  function resetAll() {
+    if (!confirm('Reset all checkboxes for a fresh day?')) return;
+    document.querySelectorAll('.task-item.done').forEach(el => el.classList.remove('done'));
+    saveState({});
+    updateProgress();
+  }
+
+  // ── Pop Out: opens a compact floating window in the bottom-right corner ──
+  function openSticky() {
+    const w = 440, h = 720;
+    const left = screen.width - w - 20;
+    const top = Math.max(0, screen.height - h - 60);
+    const popup = window.open(
+      window.location.href,
+      'helena_sticky',
+      `width=${w},height=${h},left=${left},top=${top},resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no`
+    );
+    if (popup) {
+      popup.focus();
+    } else {
+      alert('Pop-out blocked!\n\nTo fix: look for a blocked popup icon in your browser address bar, click it, and choose "Always allow pop-ups from this page". Then try again.');
+    }
+  }
+
+  // ── Restore saved state on load ──
+  const state = getState();
+  document.querySelectorAll('.task-item').forEach(el => {
+    if (state[getId(el)]) el.classList.add('done');
+  });
+  updateProgress();
+</script>
+</body>
+</html>
