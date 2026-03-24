@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel — Complete Career Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f7f4ef;--ink:#1a1814;--mid:#5a5650;--soft:#9a9490;
+  --line:#d8d3cc;--surface:#fff;--surface2:#f0ece5;
+  --gold:#b08030;--gold-bg:#fdf7ed;--gold-line:#e8d5b0;
+  --teal:#2a7a7a;--teal-bg:#edf5f5;--teal-line:#b0d0d0;
+  --rose:#8a3050;--rose-bg:#fdf0f3;--rose-line:#ddb0bc;
+  --green:#386840;--green-bg:#eef5ef;--green-line:#b4cfb8;
+  --blue:#2a5080;--blue-bg:#edf2f8;--blue-line:#b0c8e0;
+  --purple:#5a3080;--purple-bg:#f3eef8;--purple-line:#c8b0e0;
+  --orange:#7a3a10;--orange-bg:#fdf3ec;--orange-line:#ddb898;
+  --track-md:#1a3a5c;--track-cre:#2a5a2a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;}
+a{color:var(--teal);text-decoration:none;}a:hover{text-decoration:underline;}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--ink);color:var(--bg);padding:10px 40px;display:flex;align-items:center;justify-content:space-between;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;}
+
+/* ── MASTHEAD ── */
+.masthead{padding:52px 40px 36px;border-bottom:2px solid var(--ink);max-width:1040px;margin:0 auto;}
+.masthead-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:14px;}
+.masthead h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.5vw,58px);font-weight:300;line-height:1.05;letter-spacing:-1px;}
+.masthead h1 em{font-style:italic;}
+.masthead-sub{margin-top:16px;color:var(--mid);font-size:14px;max-width:640px;line-height:1.7;}
+
+/* ── TRACK NAV ── */
+.track-nav{max-width:1040px;margin:0 auto;padding:0 40px;display:flex;gap:0;border-bottom:1px solid var(--line);background:var(--surface2);}
+.track-btn{padding:0;border:none;background:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:8px;padding:14px 24px;border-bottom:3px solid transparent;color:var(--soft);transition:all .2s;}
+.track-btn:hover{color:var(--ink);}
+.track-btn.active-md{color:var(--track-md);border-bottom-color:var(--track-md);font-weight:500;}
+.track-btn.active-cre{color:var(--track-cre);border-bottom-color:var(--track-cre);font-weight:500;}
+.track-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.track-dot.md{background:var(--track-md);}
+.track-dot.cre{background:var(--track-cre);}
+
+/* ── TAB NAV ── */
+.tab-nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--line);overflow-x:auto;display:none;}
+.tab-nav.visible{display:flex;}
+.tab-nav-inner{display:flex;max-width:1040px;margin:0 auto;padding:0 40px;width:100%;}
+.tab-btn{padding:14px 16px;border:none;border-bottom:3px solid transparent;background:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);white-space:nowrap;transition:all .2s;}
+.tab-btn:hover{color:var(--ink);}
+.tab-btn.active{color:var(--ink);border-bottom-color:var(--ink);}
+
+/* ── TRACKS ── */
+.track{display:none;}.track.active{display:block;}
+
+/* ── PANELS ── */
+.panel{display:none;max-width:1040px;margin:0 auto;padding:44px 40px 80px;}
+.panel.active{display:block;}
+
+/* ── SHARED COMPONENTS ── */
+.sect-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.sect-label::after{content:'';flex:1;height:1px;background:var(--line);}
+.sect-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;line-height:1.2;margin-bottom:10px;}
+.sect-title em{font-style:italic;}
+.sect-intro{color:var(--mid);font-size:14px;max-width:700px;line-height:1.75;margin-bottom:32px;}
+
+.callout{border-left:3px solid var(--gold);padding:14px 18px;background:var(--gold-bg);border-radius:0 8px 8px 0;margin-bottom:24px;font-size:13.5px;color:var(--mid);line-height:1.7;}
+.callout strong{color:var(--ink);}
+.callout.teal{border-color:var(--teal);background:var(--teal-bg);}
+.callout.green{border-color:var(--green);background:var(--green-bg);}
+.callout.rose{border-color:var(--rose);background:var(--rose-bg);}
+.callout.orange{border-color:var(--orange);background:var(--orange-bg);}
+.callout.ink{border-color:var(--ink);background:var(--surface2);}
+
+/* PATH CARDS */
+.path-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:32px;}
+.path-card{border-radius:10px;padding:22px 22px 18px;border:1px solid var(--line);background:var(--surface);}
+.path-card.gold{border-color:var(--gold-line);background:var(--gold-bg);}
+.path-card.teal{border-color:var(--teal-line);background:var(--teal-bg);}
+.path-card.rose{border-color:var(--rose-line);background:var(--rose-bg);}
+.path-card-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:7px;}
+.path-card.gold .path-card-eyebrow{color:var(--gold);}
+.path-card.teal .path-card-eyebrow{color:var(--teal);}
+.path-card.rose .path-card-eyebrow{color:var(--rose);}
+.path-card h3{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;margin-bottom:9px;line-height:1.2;}
+.path-card p{font-size:13px;color:var(--mid);line-height:1.65;margin-bottom:8px;}
+.path-card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;}
+.pct{font-size:11px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:4px;background:rgba(255,255,255,.55);color:var(--mid);border:1px solid rgba(0,0,0,.08);}
+.pct.strong{color:var(--green);background:var(--green-bg);border-color:var(--green-line);}
+.pct.warn{color:var(--rose);background:var(--rose-bg);border-color:var(--rose-line);}
+
+/* MOD GRID */
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-bottom:32px;}
+.mod-card{padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:8px;}
+.mod-card-title{font-weight:600;font-size:13px;margin-bottom:4px;}
+.mod-card-body{font-size:12.5px;color:var(--mid);line-height:1.6;}
+
+/* PREREQ */
+.prereq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:9px;margin-bottom:32px;}
+.prereq-item{display:flex;align-items:center;gap:11px;padding:13px 15px;border-radius:8px;border:1px solid var(--line);background:var(--surface);}
+.prereq-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.prereq-dot.done{background:var(--green);}
+.prereq-dot.todo{background:#d4a840;}
+.prereq-dot.na{background:var(--line);}
+.prereq-name{font-size:13px;font-weight:500;flex:1;}
+.prereq-note{font-size:11.5px;color:var(--soft);margin-top:2px;}
+.prereq-status{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:4px;white-space:nowrap;}
+.prereq-status.done{background:var(--green-bg);color:var(--green);}
+.prereq-status.todo{background:#fdf5e6;color:#b08030;}
+.prereq-status.na{background:var(--surface2);color:var(--soft);}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:26px;margin-bottom:36px;}
+.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--line);}
+.tl{position:relative;margin-bottom:24px;}
+.tl:last-child{margin-bottom:0;}
+.tl-dot{position:absolute;left:-23px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:var(--bg);}
+.tl-dot.done{border-color:var(--green);background:var(--green);}
+.tl-dot.active{border-color:var(--gold);background:var(--gold-bg);}
+.tl-year{font-family:'DM Mono',monospace;font-size:11px;color:var(--soft);margin-bottom:3px;}
+.tl-head{font-weight:500;font-size:14px;margin-bottom:4px;}
+.tl-body{font-size:13px;color:var(--mid);line-height:1.65;}
+.tl-body ul{margin:5px 0 0 14px;}
+.tl-body ul li{margin-bottom:2px;}
+
+/* SHADOWING */
+.hours-counter{display:flex;gap:14px;margin-bottom:24px;flex-wrap:wrap;}
+.hours-box{padding:14px 18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;text-align:center;flex:1;min-width:110px;}
+.hours-box .num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;display:block;line-height:1;}
+.hours-box .lbl{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--soft);margin-top:3px;}
+.hours-box.rad .num{color:var(--gold);}
+.hours-box.derm .num{color:var(--rose);}
+.hours-box.total .num{color:var(--teal);}
+.notebook-header{background:var(--ink);color:var(--bg);border-radius:10px 10px 0 0;padding:18px 22px;display:flex;align-items:center;gap:14px;}
+.notebook-header h3{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;font-weight:400;}
+.notebook-body{background:var(--surface);border:1px solid var(--line);border-top:none;border-radius:0 0 10px 10px;margin-bottom:22px;}
+.nb-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line);}
+.nb-field label{font-size:11px;font-family:'DM Mono',monospace;color:var(--soft);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:4px;}
+.nb-field input,.nb-field select{width:100%;background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:7px 10px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border-color .2s;}
+.nb-field input:focus,.nb-field select:focus{border-color:var(--teal);}
+.nb-prompts{padding:14px 18px 18px;}
+.nb-prompt{margin-bottom:14px;}
+.nb-prompt label{font-size:11px;font-family:'DM Mono',monospace;color:var(--mid);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:4px;}
+.nb-prompt .itip{font-size:11.5px;color:var(--teal);font-style:italic;margin-bottom:5px;}
+.nb-prompt textarea{width:100%;background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:9px 11px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);resize:vertical;min-height:75px;outline:none;transition:border-color .2s;line-height:1.55;}
+.nb-prompt textarea:focus{border-color:var(--teal);}
+.nb-actions{display:flex;gap:8px;padding:10px 18px;border-top:1px solid var(--line);background:var(--surface2);border-radius:0 0 10px 10px;}
+.btn{padding:8px 16px;border-radius:6px;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;transition:all .15s;}
+.btn-primary{background:var(--ink);color:var(--bg);}
+.btn-primary:hover{background:#2a2820;}
+.btn-secondary{background:var(--surface);border:1px solid var(--line);color:var(--mid);}
+.btn-danger{background:var(--rose-bg);border:1px solid var(--rose-line);color:var(--rose);}
+.entry-card{background:var(--surface);border:1px solid var(--line);border-radius:9px;margin-bottom:10px;overflow:hidden;}
+.entry-head{padding:13px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--surface2);}
+.entry-head:hover{background:var(--line);}
+.entry-title{font-weight:500;font-size:13.5px;}
+.entry-meta{font-family:'DM Mono',monospace;font-size:11px;color:var(--soft);}
+.entry-body{padding:14px 16px;display:none;}
+.entry-body.open{display:block;}
+.entry-field{margin-bottom:10px;}.entry-field:last-child{margin-bottom:0;}
+.entry-field-lbl{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--soft);margin-bottom:2px;}
+.entry-field-val{font-size:13px;color:var(--mid);line-height:1.65;white-space:pre-wrap;}
+.spec-badge{display:inline-block;padding:2px 7px;border-radius:4px;font-family:'DM Mono',monospace;font-size:10px;margin-right:5px;}
+.spec-badge.rad{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-line);}
+.spec-badge.derm{background:var(--rose-bg);color:var(--rose);border:1px solid var(--rose-line);}
+.spec-badge.numed{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-line);}
+
+/* ── SQL ── */
+.sql-week{background:var(--surface);border:1px solid var(--line);border-radius:9px;margin-bottom:14px;overflow:hidden;}
+.sql-wh{padding:14px 18px;background:var(--ink);color:var(--bg);display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;}
+.sql-wh:hover{background:#2a2820;}
+.sql-wnum{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;opacity:.55;}
+.sql-wtitle{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;font-weight:400;flex:1;}
+.sql-wtoggle{font-size:14px;opacity:.55;transition:transform .2s;}
+.sql-wb{padding:16px 18px 18px;}
+.sql-wb.collapsed{display:none;}
+.sql-res{display:flex;align-items:flex-start;gap:11px;padding:11px 0;border-bottom:1px solid var(--line);}
+.sql-res:last-of-type{border-bottom:none;padding-bottom:0;}
+.sql-icon{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:var(--surface2);}
+.sql-rb{flex:1;}
+.sql-rname{font-weight:600;font-size:13px;}
+.sql-rname a{color:var(--ink);}
+.sql-rname a:hover{color:var(--teal);}
+.sql-rurl{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--teal);display:block;margin-top:1px;}
+.sql-rdesc{font-size:12px;color:var(--mid);margin-top:3px;line-height:1.6;}
+.sql-badge{font-family:'DM Mono',monospace;font-size:10px;padding:2px 6px;border-radius:4px;flex-shrink:0;margin-top:2px;}
+.sql-badge.i{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-line);}
+.sql-badge.v{background:var(--rose-bg);color:var(--rose);border:1px solid var(--rose-line);}
+.sql-badge.t{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-line);}
+.sql-badge.p{background:var(--green-bg);color:var(--green);border:1px solid var(--green-line);}
+.sql-journal{margin-top:12px;padding:12px;background:var(--surface2);border-radius:7px;border:1px solid var(--line);}
+.sql-journal-lbl{font-family:'DM Mono',monospace;font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
+.sql-journal textarea{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:9px;font-family:'DM Sans',sans-serif;font-size:13px;resize:vertical;min-height:65px;outline:none;color:var(--ink);}
+.sql-journal .energy-tip{margin-top:6px;font-size:12px;color:var(--teal);font-style:italic;}
+.wpbar{height:4px;background:var(--line);border-radius:2px;margin-bottom:5px;overflow:hidden;}
+.wpbar-inner{height:100%;border-radius:2px;background:var(--teal);transition:width .4s;}
+
+/* ── ENERGY APP ── */
+.thesis{background:var(--ink);color:var(--bg);border-radius:12px;padding:32px 36px;margin-bottom:32px;}
+.thesis .ey{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;margin-bottom:10px;}
+.thesis h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1.3;margin-bottom:14px;}
+.thesis h2 em{font-style:italic;color:#c8a96e;}
+.thesis p{font-size:13.5px;opacity:.75;line-height:1.75;max-width:660px;}
+
+.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:32px;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.chain-step{padding:18px 14px;background:var(--surface);border-right:1px solid var(--line);text-align:center;}
+.chain-step:last-child{border-right:none;}
+.chain-step:nth-child(even){background:var(--surface2);}
+.chain-icon{font-size:20px;margin-bottom:6px;}
+.chain-title{font-weight:600;font-size:12.5px;margin-bottom:3px;}
+.chain-body{font-size:11.5px;color:var(--mid);line-height:1.45;}
+
+/* PROJECT CARDS */
+.proj-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:32px;}
+.proj-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.proj-card-top{padding:18px 18px 14px;cursor:pointer;transition:background .15s;}
+.proj-card-top:hover{background:var(--surface2);}
+.proj-emoji{font-size:24px;display:block;margin-bottom:9px;}
+.proj-card h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;margin-bottom:6px;}
+.proj-card p{font-size:13px;color:var(--mid);line-height:1.6;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
+.proj-tag{font-size:10.5px;font-family:'DM Mono',monospace;padding:2px 6px;border-radius:4px;background:var(--surface2);color:var(--soft);border:1px solid var(--line);}
+.proj-expand{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--soft);padding:9px 18px;border-top:1px solid var(--line);display:block;cursor:pointer;background:none;border-left:none;border-right:none;border-bottom:none;width:100%;text-align:left;transition:background .15s;}
+.proj-expand:hover{background:var(--surface2);}
+.proj-talk{background:var(--purple-bg);border-top:1px solid var(--purple-line);padding:14px 18px;display:none;}
+.proj-talk.open{display:block;}
+.proj-talk h4{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--purple);margin-bottom:8px;}
+.proj-talk ul{list-style:none;padding:0;}
+.proj-talk ul li{font-size:13px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--purple-line);line-height:1.55;}
+.proj-talk ul li:last-child{border-bottom:none;}
+.proj-talk ul li::before{content:'↗ ';color:var(--purple);font-size:11px;}
+
+/* ENTERPRISE CARDS */
+.ent-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-bottom:32px;}
+.ent-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;}
+.ent-card::before{content:'';display:block;width:28px;height:3px;border-radius:2px;margin-bottom:10px;}
+.ent-card.e1::before{background:var(--blue);}
+.ent-card.e2::before{background:var(--orange);}
+.ent-card.e3::before{background:var(--teal);}
+.ent-card.e4::before{background:var(--purple);}
+.ent-card.e5::before{background:var(--green);}
+.ent-card.e6::before{background:var(--rose);}
+.ent-title{font-weight:600;font-size:14px;margin-bottom:4px;}
+.ent-buyer{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);margin-bottom:8px;}
+.ent-body{font-size:12.5px;color:var(--mid);line-height:1.6;}
+.ent-value{font-size:12px;margin-top:8px;padding:6px 10px;background:var(--surface2);border-radius:5px;color:var(--mid);font-style:italic;}
+
+/* DATA SOURCES */
+.ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:11px;margin-bottom:32px;}
+.ds-card{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:16px 18px;}
+.ds-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;}
+.ds-name{font-weight:600;font-size:13.5px;}
+.ds-badge{font-size:10px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:4px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-line);}
+.ds-badge.api{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-line);}
+.ds-body{font-size:12px;color:var(--mid);line-height:1.6;margin-bottom:8px;}
+
+/* BUILD PHASES */
+.build-phase{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;}
+.bp-num{width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;flex-shrink:0;margin-top:2px;}
+.bp-body{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:14px 16px;}
+.bp-title{font-weight:600;font-size:13.5px;margin-bottom:3px;}
+.bp-desc{font-size:12.5px;color:var(--mid);line-height:1.6;}
+.bp-tools{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.bp-tool{font-size:10.5px;font-family:'DM Mono',monospace;padding:2px 6px;border-radius:4px;background:var(--surface2);color:var(--soft);border:1px solid var(--line);}
+
+/* INTERVIEW QA */
+.qa-item{border:1px solid var(--line);border-radius:9px;margin-bottom:9px;overflow:hidden;}
+.qa-q{padding:14px 18px;background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-weight:500;font-size:13.5px;user-select:none;}
+.qa-q:hover{background:var(--line);}
+.qa-arr{color:var(--soft);font-size:12px;transition:transform .2s;flex-shrink:0;margin-left:12px;}
+.qa-ans{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .2s;}
+.qa-ans.open{padding:14px 18px;max-height:900px;}
+.qa-ctx{font-size:10.5px;font-family:'DM Mono',monospace;color:var(--teal);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px;}
+.qa-text{font-size:13.5px;color:var(--mid);line-height:1.75;}
+.qa-text p{margin-bottom:8px;}
+.qa-text p:last-child{margin-bottom:0;}
+
+/* SQL MILESTONE CHECKPOINTS */
+.sql-milestones{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px;}
+.sql-milestones-lbl{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.sql-milestones-lbl::after{content:'';flex:1;height:1px;background:var(--line);}
+.milestone-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer;user-select:none;}
+.milestone-item:last-child{border-bottom:none;padding-bottom:0;}
+.milestone-item:hover .milestone-title{color:var(--teal);}
+.milestone-item.done .milestone-title{text-decoration:line-through;color:var(--soft);}
+.milestone-box{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--line);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;background:var(--surface);transition:all .15s;}
+.milestone-item.done .milestone-box{background:var(--teal);border-color:var(--teal);}
+.milestone-box svg{display:none;}
+.milestone-item.done .milestone-box svg{display:block;}
+.milestone-title{font-size:13px;font-weight:500;color:var(--ink);}
+.milestone-sub{font-size:11.5px;color:var(--soft);margin-top:1px;}
+.milestone-sql{font-family:'DM Mono',monospace;font-size:11px;background:var(--surface2);border:1px solid var(--line);border-radius:5px;padding:6px 10px;margin-top:5px;color:var(--mid);line-height:1.5;white-space:pre-wrap;}
+.milestone-expand-btn{font-family:'DM Mono',monospace;font-size:10px;color:var(--teal);background:none;border:none;cursor:pointer;padding:2px 0;text-transform:uppercase;letter-spacing:.06em;}
+.milestone-expand-btn:hover{text-decoration:underline;}
+
+/* CONSUMER PROJECT CARDS — richer than before */
+.cproj-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;margin-bottom:32px;}
+.cproj-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;}
+.cproj-card-top{padding:20px 20px 14px;flex:1;}
+.cproj-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.cproj-emoji{font-size:26px;flex-shrink:0;}
+.cproj-badge{font-family:'DM Mono',monospace;font-size:9.5px;padding:3px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;margin-top:3px;}
+.cproj-badge.b1{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-line);}
+.cproj-badge.b2{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-line);}
+.cproj-badge.b3{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-line);}
+.cproj-badge.b4{background:var(--rose-bg);color:var(--rose);border:1px solid var(--rose-line);}
+.cproj-badge.b5{background:var(--green-bg);color:var(--green);border:1px solid var(--green-line);}
+.cproj-card h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;margin-bottom:6px;line-height:1.2;}
+.cproj-card .hook{font-size:13px;color:var(--ink);font-weight:500;margin-bottom:6px;line-height:1.5;}
+.cproj-card p{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:8px;}
+.cproj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
+.cproj-tag{font-size:10.5px;font-family:'DM Mono',monospace;padding:2px 6px;border-radius:4px;background:var(--surface2);color:var(--soft);border:1px solid var(--line);}
+.cproj-sections{border-top:1px solid var(--line);}
+.cproj-section-btn{width:100%;padding:10px 18px;border:none;border-bottom:1px solid var(--line);background:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);text-align:left;display:flex;align-items:center;justify-content:space-between;transition:background .15s;}
+.cproj-section-btn:last-of-type{border-bottom:none;}
+.cproj-section-btn:hover{background:var(--surface2);color:var(--ink);}
+.cproj-section-body{padding:12px 18px 14px;border-bottom:1px solid var(--line);display:none;font-size:13px;color:var(--mid);line-height:1.65;}
+.cproj-section-body.open{display:block;}
+.cproj-section-body ul{list-style:none;padding:0;}
+.cproj-section-body ul li{padding:4px 0;border-bottom:1px dotted var(--line);}
+.cproj-section-body ul li:last-child{border-bottom:none;}
+.cproj-section-body ul li::before{content:'→ ';color:var(--soft);font-size:11px;}
+
+/* CHECKLIST */
+.check-item{display:flex;align-items:flex-start;gap:11px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:7px;margin-bottom:7px;cursor:pointer;transition:background .15s;user-select:none;}
+.check-item:hover{background:var(--surface2);}
+.check-item.done{opacity:.5;}
+.check-item.done .ci-title{text-decoration:line-through;color:var(--soft);}
+.check-box{width:17px;height:17px;border-radius:4px;border:1.5px solid var(--line);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;background:var(--surface);}
+.check-item.done .check-box{background:var(--green);border-color:var(--green);}
+.check-box svg{display:none;}
+.check-item.done .check-box svg{display:block;}
+.ci-title{font-size:13.5px;font-weight:500;}
+.ci-sub{font-size:11.5px;color:var(--soft);margin-top:2px;}
+.ci-badge{font-family:'DM Mono',monospace;font-size:10px;padding:2px 6px;border-radius:4px;flex-shrink:0;margin-top:2px;white-space:nowrap;}
+.ci-badge.now{background:var(--green-bg);color:var(--green);border:1px solid var(--green-line);}
+.ci-badge.prep{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-line);}
+.ci-badge.later{background:var(--surface2);color:var(--soft);border:1px solid var(--line);}
+
+/* ── DAILY DASHBOARD ── */
+.daily-dash{background:var(--ink);color:var(--bg);border-bottom:2px solid var(--ink);}
+.daily-dash-inner{max-width:1040px;margin:0 auto;padding:24px 40px;}
+.dash-date-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.dash-date{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;}
+.dash-streak{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;opacity:.45;}
+.dash-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:20px;}
+.dash-col-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.45;margin-bottom:10px;}
+
+.dash-action-item{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.08);cursor:pointer;user-select:none;font-size:13px;opacity:.85;transition:opacity .15s;}
+.dash-action-item:last-of-type{border-bottom:none;}
+.dash-action-item:hover{opacity:1;}
+.dash-action-item.done-d{opacity:.3;}
+.dash-action-item.done-d span{text-decoration:line-through;}
+.dash-action-box{width:15px;height:15px;border-radius:3px;border:1.5px solid rgba(255,255,255,.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.dash-action-item.done-d .dash-action-box{background:var(--teal);border-color:var(--teal);}
+.dash-action-box svg{display:none;}
+.dash-action-item.done-d .dash-action-box svg{display:block;}
+.dash-add-action{display:flex;gap:6px;margin-top:10px;}
+.dash-add-action input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:5px;padding:6px 9px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--bg);outline:none;}
+.dash-add-action input::placeholder{opacity:.4;}
+.dash-add-action input:focus{border-color:rgba(255,255,255,.35);}
+.dash-add-action button{padding:6px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:5px;color:var(--bg);cursor:pointer;font-size:14px;transition:background .15s;}
+.dash-add-action button:hover{background:rgba(255,255,255,.18);}
+
+.dash-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.dash-stat{background:rgba(255,255,255,.06);border-radius:7px;padding:12px;text-align:center;border:1px solid rgba(255,255,255,.08);}
+.dash-stat-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;line-height:1;color:var(--bg);}
+.dash-stat-lbl{font-family:'DM Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;opacity:.45;margin-top:3px;}
+
+.dash-links{display:flex;flex-direction:column;gap:5px;}
+.dash-link{font-size:12.5px;color:rgba(255,255,255,.65);padding:6px 9px;border-radius:5px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);transition:all .15s;display:block;}
+.dash-link:hover{background:rgba(255,255,255,.1);color:var(--bg);text-decoration:none;}
+
+.dash-journal-row{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;}
+.dash-journal-row .dash-col-label{margin-bottom:7px;}
+.dash-journal-row textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:10px 12px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--bg);resize:none;height:52px;outline:none;line-height:1.55;}
+.dash-journal-row textarea::placeholder{opacity:.35;}
+.dash-journal-row textarea:focus{border-color:rgba(255,255,255,.3);}
+
+@media(max-width:640px){
+  .daily-dash-inner{padding:18px 20px;}
+  .dash-cols{grid-template-columns:1fr;gap:16px;}
+}
+
+/* responsive */
+@media(max-width:640px){
+  .masthead,.panel,.track-nav{padding-left:20px;padding-right:20px;}
+  .tab-nav-inner{padding-left:20px;padding-right:20px;}
+  .tab-btn{padding:12px 10px;font-size:9.5px;}
+  .track-btn{padding:12px 14px;}
+  .chain{grid-template-columns:1fr 1fr;}
+  .nb-meta{grid-template-columns:1fr 1fr;}
+}
+
+/* ── OUTREACH HUB ── */
+.outreach-stats{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;}
+.ostat{flex:1;min-width:100px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:9px;text-align:center;}
+.ostat .on{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;display:block;line-height:1;}
+.ostat .ol{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--soft);margin-top:3px;}
+.ostat.sent .on{color:var(--teal);}
+.ostat.replied .on{color:var(--green);}
+.ostat.pending .on{color:var(--gold);}
+
+.template-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-bottom:32px;}
+.tpl-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.tpl-card-head{padding:16px 18px 12px;}
+.tpl-badge-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.tpl-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--soft);padding:2px 7px;background:var(--surface2);border-radius:4px;border:1px solid var(--line);}
+.tpl-type{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:4px;}
+.tpl-type.cold{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-line);}
+.tpl-type.warm{background:var(--green-bg);color:var(--green);border:1px solid var(--green-line);}
+.tpl-type.followup{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-line);}
+.tpl-type.direct{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-line);}
+.tpl-type.founder{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-line);}
+.tpl-card-head h3{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;margin-bottom:4px;}
+.tpl-card-head p{font-size:12px;color:var(--mid);line-height:1.5;}
+.tpl-toggle-btn{width:100%;padding:9px 18px;border:none;border-top:1px solid var(--line);background:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);text-align:left;display:flex;justify-content:space-between;transition:background .15s;}
+.tpl-toggle-btn:hover{background:var(--surface2);color:var(--ink);}
+.tpl-body{display:none;padding:14px 18px 16px;border-top:1px solid var(--line);background:var(--surface2);}
+.tpl-body.open{display:block;}
+.tpl-subject{font-family:'DM Mono',monospace;font-size:11px;color:var(--soft);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;}
+.tpl-text{font-size:13px;color:var(--mid);line-height:1.75;white-space:pre-wrap;font-family:'DM Sans',sans-serif;}
+.tpl-angel{margin-top:12px;padding:10px 12px;background:var(--surface);border-radius:6px;border-left:3px solid var(--gold);}
+.tpl-angel-lbl{font-family:'DM Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;}
+.tpl-angel-text{font-size:12.5px;color:var(--mid);line-height:1.65;white-space:pre-wrap;font-family:'DM Sans',sans-serif;}
+
+.otodo-add{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.otodo-add input,.otodo-add select{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 11px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;}
+.otodo-add input{flex:1;min-width:180px;}
+.otodo-add input:focus,.otodo-add select:focus{border-color:var(--teal);}
+.otodo-item{display:flex;align-items:flex-start;gap:10px;padding:11px 13px;background:var(--surface);border:1px solid var(--line);border-radius:7px;margin-bottom:7px;}
+.otodo-item.done-o .otodo-name{text-decoration:line-through;color:var(--soft);}
+.otodo-item.done-o .otodo-box{background:var(--green);border-color:var(--green);}
+.otodo-box{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--line);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;background:var(--surface);}
+.otodo-box svg{display:none;}
+.otodo-item.done-o .otodo-box svg{display:block;}
+.otodo-name{font-size:13.5px;font-weight:500;flex:1;}
+.otodo-meta{font-size:11.5px;color:var(--soft);margin-top:1px;}
+.otodo-track-badge{font-family:'DM Mono',monospace;font-size:10px;padding:2px 6px;border-radius:4px;flex-shrink:0;white-space:nowrap;}
+.otodo-track-badge.md{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-line);}
+.otodo-track-badge.cre{background:var(--green-bg);color:var(--green);border:1px solid var(--green-line);}
+.otodo-del{background:none;border:none;cursor:pointer;color:var(--soft);font-size:16px;padding:0 2px;flex-shrink:0;line-height:1;}
+.otodo-del:hover{color:var(--rose);}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>Angel Sanders · Columbia ChemE MS · NYC</span>
+  <span>Complete Career Plan · 2026</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Two Tracks · One Vision</div>
+  <h1>Medicine, <em>Technology,</em><br>and the Space Between</h1>
+  <p class="masthead-sub">Your background spans nuclear physics, molecular biology, process engineering, and art. This plan organizes those into two parallel career tracks — MD path and Creative/Tech path — with a shared intellectual identity running through both: energy access as a determinant of human health.</p>
+</div>
+
+<!-- ── DAILY DASHBOARD ── -->
+<div class="daily-dash" id="daily-dash">
+  <div class="daily-dash-inner">
+
+    <div class="dash-date-row">
+      <div class="dash-date" id="dash-date"></div>
+      <div class="dash-streak" id="dash-streak">Loading...</div>
+    </div>
+
+    <div class="dash-cols">
+
+      <!-- TODAY'S FOCUS -->
+      <div class="dash-col">
+        <div class="dash-col-label">Today's 3 actions</div>
+        <div class="dash-actions" id="dash-actions-list">
+          <div class="dash-action-item" onclick="toggleDashAction(this)" data-id="da0">
+            <div class="dash-action-box"><svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 2.5L3 4.5L7 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <span>Send 1 cold outreach message</span>
+          </div>
+          <div class="dash-action-item" onclick="toggleDashAction(this)" data-id="da1">
+            <div class="dash-action-box"><svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 2.5L3 4.5L7 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <span>Work 30 min on SQL / energy project</span>
+          </div>
+          <div class="dash-action-item" onclick="toggleDashAction(this)" data-id="da2">
+            <div class="dash-action-box"><svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 2.5L3 4.5L7 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <span>Apply to 1 job or research 1 program</span>
+          </div>
+        </div>
+        <div class="dash-add-action">
+          <input type="text" id="dash-new-action" placeholder="Add custom action for today..." />
+          <button onclick="addDashAction()">+</button>
+        </div>
+      </div>
+
+      <!-- PROGRESS SNAPSHOT -->
+      <div class="dash-col">
+        <div class="dash-col-label">Progress snapshot</div>
+        <div class="dash-stats">
+          <div class="dash-stat">
+            <div class="dash-stat-val" id="snap-shadow">0</div>
+            <div class="dash-stat-lbl">Clinical hrs</div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-stat-val" id="snap-outreach">0</div>
+            <div class="dash-stat-lbl">Outreach sent</div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-stat-val" id="snap-sql">0</div>
+            <div class="dash-stat-lbl">SQL milestones</div>
+          </div>
+          <div class="dash-stat">
+            <div class="dash-stat-val" id="snap-checklist">0</div>
+            <div class="dash-stat-lbl">Checkpoints done</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="dash-col">
+        <div class="dash-col-label">Quick links</div>
+        <div class="dash-links">
+          <a href="https://radsandy4.github.io/dailytracker/helena_daily_checklist.html" target="_blank" class="dash-link">📋 Daily Checklist</a>
+          <a href="https://www.linkedin.com/jobs/" target="_blank" class="dash-link">💼 LinkedIn Jobs</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=reflectance+confocal+microscopy+melanoma+New+York" target="_blank" class="dash-link">🔬 PubMed Search</a>
+          <a href="https://sqlbolt.com" target="_blank" class="dash-link">🎯 SQLBolt</a>
+          <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/beta/data-explorer/" target="_blank" class="dash-link">📊 NYC Health Data</a>
+          <a href="https://www.eia.gov/opendata/" target="_blank" class="dash-link">⚡ EIA API</a>
+          <a href="https://www.pinterestcareers.com" target="_blank" class="dash-link">📌 Pinterest Careers</a>
+          <a href="https://www.etsy.com/careers" target="_blank" class="dash-link">🏡 Etsy Careers</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- JOURNAL STRIP -->
+    <div class="dash-journal-row">
+      <div class="dash-col-label">Today's note — one sentence, what matters right now</div>
+      <textarea id="dash-journal" placeholder="e.g. 'Sent cold message to Dr. Chen at Columbia Radiology. Started Week 2 JOIN query. Feeling clearer about Path B.'" onchange="saveDashNote(this.value)"></textarea>
+    </div>
+
+  </div>
+</div>
+
+<!-- TRACK SWITCHER -->
+<div class="track-nav">
+  <button class="track-btn active-md" id="btn-md" onclick="switchTrack('md',this)">
+    <span class="track-dot md"></span>MD Track — Radiology & Dermatology
+  </button>
+  <button class="track-btn" id="btn-cre" onclick="switchTrack('cre',this)">
+    <span class="track-dot cre"></span>Creative / Tech Track — Pinterest & Beyond
+  </button>
+</div>
+
+<!-- MD TAB NAV -->
+<div class="tab-nav visible" id="tabnav-md">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="showPanel('rad',this,'md')">I. Rad–Derm Paths</button>
+    <button class="tab-btn" onclick="showPanel('prereq',this,'md')">II. Prerequisites</button>
+    <button class="tab-btn" onclick="showPanel('shadow',this,'md')">III. Shadowing Log</button>
+    <button class="tab-btn" onclick="showPanel('outreach-md',this,'md')">IV. Outreach Hub</button>
+  </div>
+</div>
+
+<!-- CRE TAB NAV -->
+<div class="tab-nav" id="tabnav-cre">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="showPanel('energy',this,'cre')">I. Energy App</button>
+    <button class="tab-btn" onclick="showPanel('projects',this,'cre')">II. Related Projects</button>
+    <button class="tab-btn" onclick="showPanel('sql',this,'cre')">III. SQL Plan</button>
+    <button class="tab-btn" onclick="showPanel('interview',this,'cre')">IV. Interview Scripts</button>
+    <button class="tab-btn" onclick="showPanel('outreach-cre',this,'cre')">V. Outreach Hub</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ MD TRACK ════════════════════════════════════ -->
+<div class="track active" id="track-md">
+
+<!-- MD PANEL: RAD-DERM -->
+<div class="panel active" id="panel-rad">
+  <div class="sect-label">MD Track · Section I</div>
+  <h2 class="sect-title">Where Radiology <em>Meets</em> Dermatology</h2>
+  <p class="sect-intro">Three real paths where imaging and skin medicine converge. Your nuclear engineering background is directly useful in all three — most applicants learn the underlying physics from scratch.</p>
+
+  <div class="path-cards">
+    <div class="path-card gold">
+      <div class="path-card-eyebrow">Path A · Most Accessible</div>
+      <h3>Dermatology + Imaging Fellowship<br><em>(Dermato-Oncology)</em></h3>
+      <p>Match into Dermatology residency (3 yrs + internship), then fellowship at <a href="https://www.mskcc.org/departments/division-subspecialty-medicine/dermatology-service" target="_blank">MSK</a> or <a href="https://www.hopkinsmedicine.org/dermatology/education/fellowships" target="_blank">Hopkins</a> in cutaneous oncology imaging — dermoscopy, RCM, OCT, and guiding MRI/PET-CT for melanoma staging.</p>
+      <p>Your nanobody/immunotherapy research maps directly to melanoma biology. MSK's Dermato-Oncology + Imaging Fellowship is exactly this combination.</p>
+      <div class="path-card-tags">
+        <span class="pct strong">Nanobody Research = Relevant</span>
+        <span class="pct">3-yr Derm + 1-yr Fellowship</span>
+        <span class="pct warn">28% unmatched rate</span>
+        <span class="pct">$443K avg salary</span>
+      </div>
+    </div>
+    <div class="path-card teal">
+      <div class="path-card-eyebrow">Path B · Most Technically Aligned</div>
+      <h3>Diagnostic Radiology +<br><em>Nuclear Medicine / PET-CT</em></h3>
+      <p>Match into Diagnostic Radiology (4-yr residency + 1-yr internship), then <a href="https://www.snmmi.org/careercenter/content.aspx?ItemNumber=10626" target="_blank">Nuclear Medicine fellowship</a>. You read PET-CT and MRI for melanoma staging, cutaneous lymphoma, soft tissue tumors.</p>
+      <p>Your nuclear engineering background is the literal physics foundation of PET imaging — most applicants learn this from scratch.</p>
+      <div class="path-card-tags">
+        <span class="pct strong">Nuclear Eng = Direct Advantage</span>
+        <span class="pct">4-yr Rad + NucMed Fellowship</span>
+        <span class="pct">$483K avg salary</span>
+        <span class="pct warn">Competitive but less than Derm</span>
+      </div>
+    </div>
+    <div class="path-card rose">
+      <div class="path-card-eyebrow">Path C · Longest, Highest Ceiling</div>
+      <h3>MD-PhD Research Track —<br><em>Imaging Science + Skin Cancer</em></h3>
+      <p>Pursue an <a href="https://www.nigms.nih.gov/training/mechanisms/pages/mstp.aspx" target="_blank">MSTP (MD-PhD)</a> in imaging science — your nanobody + nuclear + ultrasound background makes a strong academic case. Fully funded (~8 years). Institutions: <a href="https://www.ps.columbia.edu/education/academic-programs/md-phd-program" target="_blank">Columbia P&S</a>, <a href="https://mdphd.weill.cornell.edu/" target="_blank">Weill Cornell</a>, <a href="https://icahn.mssm.edu/education/phd/md-phd" target="_blank">Icahn MSM</a>.</p>
+      <div class="path-card-tags">
+        <span class="pct">Fully funded</span>
+        <span class="pct strong">Best for Academic Medicine</span>
+        <span class="pct warn">10–14 years total</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout"><strong>Don't choose yet — shadow first.</strong> After even one day in a reading room vs. a derm clinic, you'll have clarity no amount of research can give you. Log it in the <strong>Shadowing Log →</strong></div>
+
+  <div class="sect-label">Dermatology-Specific Imaging Modalities</div>
+  <div class="mod-grid">
+    <div class="mod-card"><div class="mod-card-title">Dermoscopy</div><div class="mod-card-body">Handheld magnified lesion analysis. Pattern recognition-heavy — your artistic eye is an asset. <a href="https://www.dermoscopedia.org/" target="_blank">Dermoscopedia →</a></div></div>
+    <div class="mod-card"><div class="mod-card-title">Reflectance Confocal Microscopy</div><div class="mod-card-body">Cellular-level skin imaging via laser — near-histological resolution without biopsy. MSK is a world leader. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10969257/" target="_blank">Review →</a></div></div>
+    <div class="mod-card"><div class="mod-card-title">Optical Coherence Tomography</div><div class="mod-card-body">Cross-sectional skin layer imaging. 95.7% sensitivity for BCC. Physics-based — your background translates directly. <a href="https://openmedscience.com/unveiling-skins-secrets-the-power-of-medical-imaging/" target="_blank">Overview →</a></div></div>
+    <div class="mod-card"><div class="mod-card-title">HR-MRI</div><div class="mod-card-body">Staging melanoma, detecting perineural spread. Where radiology + derm actively collaborate. <a href="https://pubs.rsna.org/doi/full/10.1148/rg.230093" target="_blank">RadioGraphics →</a></div></div>
+    <div class="mod-card"><div class="mod-card-title">FDG PET/CT</div><div class="mod-card-body">Metabolic imaging for melanoma staging and cutaneous lymphoma. F-18 radiotracer physics = nuclear medicine core. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9866322/" target="_blank">Review →</a></div></div>
+    <div class="mod-card"><div class="mod-card-title">High-Frequency Ultrasound</div><div class="mod-card-body">Shows skin layers like histological sections. You have ultrasound research experience from Memphis — direct continuation. <a href="https://www.sciencedirect.com/book/9780128028384/imaging-in-dermatology" target="_blank">Imaging in Derm →</a></div></div>
+  </div>
+
+  <div class="sect-label">Immediate Checklist</div>
+  <div class="check-item" onclick="toggleCheck(this)" data-id="r0"><div class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="ci-body"><div class="ci-title">Shadow a radiologist at Columbia or NYP</div><div class="ci-sub"><a href="https://www.radiology.columbia.edu/" target="_blank">Columbia Radiology →</a></div></div><span class="ci-badge now">Do Now</span></div>
+  <div class="check-item" onclick="toggleCheck(this)" data-id="r1"><div class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="ci-body"><div class="ci-title">Shadow a dermatologist</div><div class="ci-sub"><a href="https://www.columbiadoctors.org/specialties/dermatology" target="_blank">Columbia Derm →</a> or a private practice</div></div><span class="ci-badge now">Do Now</span></div>
+  <div class="check-item" onclick="toggleCheck(this)" data-id="r2"><div class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="ci-body"><div class="ci-title">Review MSK Dermato-Oncology Fellowship</div><div class="ci-sub"><a href="https://www.mskcc.org/departments/division-subspecialty-medicine/dermatology-service" target="_blank">mskcc.org/dermatology →</a></div></div><span class="ci-badge now">Do Now</span></div>
+  <div class="check-item" onclick="toggleCheck(this)" data-id="r3"><div class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="ci-body"><div class="ci-title">Find 3 physicians combining derm + imaging at Columbia/MSK/Hopkins</div><div class="ci-sub"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=reflectance+confocal+microscopy+melanoma" target="_blank">PubMed search →</a> — these are your networking targets</div></div><span class="ci-badge now">Do Now</span></div>
+  <div class="check-item" onclick="toggleCheck(this)" data-id="r4"><div class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 3.5L3.5 6L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="ci-body"><div class="ci-title">Research Columbia MSTP (MD-PhD) program</div><div class="ci-sub"><a href="https://www.ps.columbia.edu/education/academic-programs/md-phd-program" target="_blank">Columbia P&S MD-PhD →</a> — fully funded</div></div><span class="ci-badge prep">Research</span></div>
+</div>
+
+<!-- MD PANEL: PREREQ -->
+<div class="panel" id="panel-prereq">
+  <div class="sect-label">MD Track · Section II</div>
+  <h2 class="sect-title">Prerequisite <em>Status</em></h2>
+  <p class="sect-intro">You're significantly closer to med school eligibility than most people assume. Three things remain.</p>
+
+  <div class="prereq-grid">
+    <div class="prereq-item"><div class="prereq-dot done"></div><div style="flex:1"><div class="prereq-name">General Chemistry I & II</div><div class="prereq-note">ChemE undergrad</div></div><span class="prereq-status done">✓ Done</span></div>
+    <div class="prereq-item"><div class="prereq-dot done"></div><div style="flex:1"><div class="prereq-name">Organic Chemistry I & II</div><div class="prereq-note">ChemE curriculum</div></div><span class="prereq-status done">✓ Done</span></div>
+    <div class="prereq-item"><div class="prereq-dot done"></div><div style="flex:1"><div class="prereq-name">Physics I & II</div><div class="prereq-note">Nuclear Engineering — exceeds requirement</div></div><span class="prereq-status done">✓ Done</span></div>
+    <div class="prereq-item"><div class="prereq-dot done"></div><div style="flex:1"><div class="prereq-name">Calculus I & II</div><div class="prereq-note">Nuclear Eng — exceeds requirement</div></div><span class="prereq-status done">✓ Done</span></div>
+    <div class="prereq-item"><div class="prereq-dot done"></div><div style="flex:1"><div class="prereq-name">Statistics / Biostatistics</div><div class="prereq-note">ChemE or Columbia coursework</div></div><span class="prereq-status done">✓ Done</span></div>
+    <div class="prereq-item"><div class="prereq-dot done"></div><div style="flex:1"><div class="prereq-name">Biochemistry</div><div class="prereq-note">Biotech MS focus — confirmed</div></div><span class="prereq-status done">✓ Done</span></div>
+    <div class="prereq-item"><div class="prereq-dot done"></div><div style="flex:1"><div class="prereq-name">Biology I (Cell / Molecular Bio)</div><div class="prereq-note">Research + MS curriculum</div></div><span class="prereq-status done">✓ Done</span></div>
+    <div class="prereq-item"><div class="prereq-dot todo"></div><div style="flex:1"><div class="prereq-name">Biology II (Genetics, Ecology, Physio)</div><div class="prereq-note"><a href="https://www.cuny.edu/academics/academic-programs/science/" target="_blank">CUNY option — much cheaper →</a></div></div><span class="prereq-status todo">⚠ Needed</span></div>
+    <div class="prereq-item"><div class="prereq-dot todo"></div><div style="flex:1"><div class="prereq-name">Biology Labs (I & II)</div><div class="prereq-note">Required lab component — 1–2 credits each</div></div><span class="prereq-status todo">⚠ Needed</span></div>
+    <div class="prereq-item"><div class="prereq-dot todo"></div><div style="flex:1"><div class="prereq-name">MCAT</div><div class="prereq-note">Target 515+ — <a href="https://students-residents.aamc.org/register-mcat-exam/register-mcat-exam" target="_blank">AAMC registration →</a></div></div><span class="prereq-status todo">⚠ Needed</span></div>
+    <div class="prereq-item"><div class="prereq-dot na"></div><div style="flex:1"><div class="prereq-name">Clinical Hours (150+ hrs)</div><div class="prereq-note">Tracked in Shadowing Log tab</div></div><span class="prereq-status na">Start Now</span></div>
+    <div class="prereq-item"><div class="prereq-dot na"></div><div style="flex:1"><div class="prereq-name">English / Writing</div><div class="prereq-note">Usually waived for grad degree holders</div></div><span class="prereq-status na">Likely Waived</span></div>
+  </div>
+
+  <div class="callout"><strong>The short list:</strong> Bio II, Bio Labs, MCAT, and clinical hours. Everything else is done. Bio II at <a href="https://www.cuny.edu/" target="_blank">CUNY</a> is a fraction of Columbia's cost — MD programs accept courses from any accredited institution.</div>
+
+  <div class="sect-label">MCAT Strategy</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:11px;margin-bottom:28px;">
+    <div style="padding:16px;background:var(--green-bg);border:1px solid var(--green-line);border-radius:8px;"><div style="font-weight:600;font-size:12.5px;color:var(--green);margin-bottom:5px;">STRONG SECTIONS</div><div style="font-size:13px;color:var(--mid);line-height:1.65;"><strong>C/P</strong> — Nuclear + ChemE MS = 90th+ percentile with minimal review.<br><br><strong>B/B</strong> — Nanobody research + biotech MS = graduate-level knowledge already.</div></div>
+    <div style="padding:16px;background:var(--gold-bg);border:1px solid var(--gold-line);border-radius:8px;"><div style="font-weight:600;font-size:12.5px;color:var(--gold);margin-bottom:5px;">NEEDS WORK</div><div style="font-size:13px;color:var(--mid);line-height:1.65;"><strong>CARS</strong> — Speed reading + logic, no science. Most unpredictable for STEM. Daily practice: <a href="https://jackwestin.com/mcat-cars-practice" target="_blank">Jack Westin →</a><br><br><strong>P/S</strong> — New material. 3–4 months. <a href="https://www.khanacademy.org/test-prep/mcat/social-sciences-and-psychology" target="_blank">Khan Academy →</a></div></div>
+    <div style="padding:16px;background:var(--blue-bg);border:1px solid var(--blue-line);border-radius:8px;"><div style="font-weight:600;font-size:12.5px;color:var(--blue);margin-bottom:5px;">FREE RESOURCES</div><div style="font-size:13px;color:var(--mid);line-height:1.65;"><a href="https://www.khanacademy.org/test-prep/mcat" target="_blank">Khan Academy MCAT →</a><br><a href="https://jackwestin.com" target="_blank">Jack Westin CARS (daily) →</a><br><a href="https://www.reddit.com/r/AnkiMCAT/" target="_blank">AnKing Anki decks →</a><br><a href="https://students-residents.aamc.org/mcat-prep/preparing-mcat-exam" target="_blank">AAMC Official Prep →</a></div></div>
+  </div>
+
+  <div class="sect-label">Timeline</div>
+  <div class="timeline">
+    <div class="tl"><div class="tl-dot active"></div><div class="tl-year">Now → 3 months</div><div class="tl-head">Complete Bio II + Bio Labs</div><div class="tl-body"><a href="https://www.cuny.edu/" target="_blank">CUNY</a> or <a href="https://sps.columbia.edu/academics/undergraduate/post-baccalaureate-pre-medical-studies" target="_blank">Columbia post-bac</a>.</div></div>
+    <div class="tl"><div class="tl-dot"></div><div class="tl-year">Month 3 → 15</div><div class="tl-head">MCAT Prep — 12 months</div><div class="tl-body"><ul><li>Months 1–4: <a href="https://www.khanacademy.org/test-prep/mcat" target="_blank">Khan Academy</a> content review</li><li>Months 3–12: Daily CARS (<a href="https://jackwestin.com" target="_blank">Jack Westin</a>, 1 passage/day)</li><li>Months 8–12: Full-length practice exams</li><li>Month 12–13: <a href="https://students-residents.aamc.org/mcat-prep/preparing-mcat-exam" target="_blank">AAMC official tests</a>, final review</li></ul></div></div>
+    <div class="tl"><div class="tl-dot"></div><div class="tl-year">Throughout</div><div class="tl-head">Clinical Hours + Shadowing</div><div class="tl-body">Target 150+ hours. Log in Shadowing tab — those notes become your personal statement. <a href="https://www.volunteermatch.org/" target="_blank">VolunteerMatch NYC →</a></div></div>
+    <div class="tl"><div class="tl-dot"></div><div class="tl-year">Month 15–18</div><div class="tl-head">AMCAS Applications</div><div class="tl-body">Target: <a href="https://www.ps.columbia.edu/admissions" target="_blank">Columbia P&S</a>, <a href="https://med.nyu.edu/admissions" target="_blank">NYU Grossman</a>, <a href="https://weill.cornell.edu/admissions" target="_blank">Weill Cornell</a>. <a href="https://students-residents.aamc.org/applying-medical-school-amcas/applying-medical-school-using-amcas" target="_blank">AMCAS opens May →</a></div></div>
+  </div>
+</div>
+
+<!-- MD PANEL: SHADOWING -->
+<div class="panel" id="panel-shadow">
+  <div class="sect-label">MD Track · Section III</div>
+  <h2 class="sect-title">Shadowing <em>Notebook</em></h2>
+  <p class="sect-intro">Log each session within 24 hours. The prompts are written to surface exactly what med school interviewers and admissions committees want to hear. These notes become your personal statement.</p>
+
+  <div class="hours-counter">
+    <div class="hours-box rad"><span class="num" id="rad-hrs">0</span><span class="lbl">Radiology Hours</span></div>
+    <div class="hours-box derm"><span class="num" id="derm-hrs">0</span><span class="lbl">Dermatology Hours</span></div>
+    <div class="hours-box total"><span class="num" id="total-hrs">0</span><span class="lbl">Total Clinical Hours</span></div>
+  </div>
+
+  <div class="callout teal"><strong>Interview tip:</strong> They want specifics — "I observed PET-CT staging for a Merkel cell carcinoma case" beats "I saw interesting cases." These prompts pull that out while it's still fresh.</div>
+
+  <div class="notebook-header"><span style="font-size:18px;">📋</span><h3>New Shadowing Entry</h3></div>
+  <div class="notebook-body">
+    <div class="nb-meta">
+      <div class="nb-field"><label>Date</label><input type="date" id="nb-date"></div>
+      <div class="nb-field"><label>Specialty</label><select id="nb-specialty"><option value="">Select...</option><option>Diagnostic Radiology</option><option>Interventional Radiology</option><option>Nuclear Medicine</option><option>Dermatology</option><option>Dermato-Oncology</option><option>Internal Medicine</option><option>Other</option></select></div>
+      <div class="nb-field"><label>Hours</label><input type="number" id="nb-hours" min="0.5" max="24" step="0.5" placeholder="e.g. 4"></div>
+    </div>
+    <div class="nb-meta" style="grid-template-columns:1fr 1fr;">
+      <div class="nb-field"><label>Physician / Location</label><input type="text" id="nb-physician" placeholder="Dr. [Name], Columbia Radiology"></div>
+      <div class="nb-field"><label>Session Title</label><input type="text" id="nb-title" placeholder="e.g. PET-CT Reading Session"></div>
+    </div>
+    <div class="nb-prompts">
+      <div class="nb-prompt"><label>What did you observe?</label><div class="itip">💬 "Tell me about a specific clinical experience."</div><textarea id="nb-observed" placeholder="Specific modalities, cases, workflows — what did the physical environment feel like?"></textarea></div>
+      <div class="nb-prompt"><label>What surprised you or challenged your assumptions?</label><div class="itip">💬 "What did shadowing teach you that you didn't expect?"</div><textarea id="nb-surprised" placeholder="Honest observations — doubts are worth noting too..."></textarea></div>
+      <div class="nb-prompt"><label>How did this connect to your engineering / research background?</label><div class="itip">💬 "Why does your background prepare you for medicine?"</div><textarea id="nb-connect" placeholder="Physics you recognized, imaging principles you already understood, analogies to your lab work..."></textarea></div>
+      <div class="nb-prompt"><label>What confirmed or changed your interest in this specialty?</label><div class="itip">💬 "Why radiology / dermatology specifically?"</div><textarea id="nb-interest" placeholder="Be honest — this is private. What felt right or wrong?"></textarea></div>
+      <div class="nb-prompt"><label>One specific moment you'll remember</label><div class="itip">💬 "Tell me about a meaningful experience." — this is your answer.</div><textarea id="nb-moment" placeholder="One moment — what happened, who was involved, what you thought or felt..."></textarea></div>
+    </div>
+    <div class="nb-actions"><button class="btn btn-primary" onclick="saveEntry()">Save Entry</button><button class="btn btn-secondary" onclick="clearForm()">Clear</button></div>
+  </div>
+  <div class="sect-label">Saved Entries</div>
+  <div id="entries-container"><div style="text-align:center;padding:28px;color:var(--soft);font-size:14px;font-style:italic;">No entries yet.</div></div>
+</div>
+
+<!-- MD OUTREACH PANEL -->
+<div class="panel" id="panel-outreach-md">
+  <div class="sect-label">MD Track · Section IV</div>
+  <h2 class="sect-title">Outreach <em>Hub</em></h2>
+  <p class="sect-intro">Templates adapted from Hali Jama's networking playbook — each one rewritten for the MD / radiology-derm path. Use the to-do list below to queue outreach targets and track them from your daily workflow.</p>
+
+  <div class="outreach-stats">
+    <div class="ostat sent"><span class="on" id="md-sent">0</span><span class="ol">Sent</span></div>
+    <div class="ostat replied"><span class="on" id="md-replied">0</span><span class="ol">Replied</span></div>
+    <div class="ostat pending"><span class="on" id="md-pending">0</span><span class="ol">To Send</span></div>
+  </div>
+
+  <div class="sect-label">Outreach To-Do — MD Track</div>
+  <div class="otodo-add">
+    <input type="text" id="md-todo-name" placeholder="Person name + role (e.g. Dr. Chen, Columbia Radiology)" />
+    <select id="md-todo-type">
+      <option value="Shadow Request">Shadow Request</option>
+      <option value="Informational Interview">Informational Interview</option>
+      <option value="Research Connection">Research Connection</option>
+      <option value="Med School Advisor">Med School Advisor</option>
+      <option value="Alumni Outreach">Alumni Outreach</option>
+    </select>
+    <button class="btn btn-primary" onclick="addOutreachTodo('md')">+ Add</button>
+  </div>
+  <div id="md-todo-list">
+    <div style="text-align:center;padding:20px;color:var(--soft);font-size:13px;font-style:italic;">No outreach queued yet — add targets above.</div>
+  </div>
+
+  <div class="sect-label" style="margin-top:32px;">Templates — MD / Radiology Track</div>
+  <div class="callout teal"><strong>How to use these:</strong> Pick the template that matches your situation, fill in the brackets with specifics about Angel, and send via LinkedIn InMail or email. The Angel-specific version under each template shows you exactly what to plug in. Never send a template without personalizing the bracketed fields.</div>
+
+  <div class="template-cards">
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">01</span><span class="tpl-type cold">Cold Outreach</span></div>
+        <h3>Radiologist / Physician Cold Message</h3>
+        <p>For reaching out to a radiologist or derm-imaging physician you found on PubMed or LinkedIn — no prior connection.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Quick question about your path to [Role]</div>
+        <div class="tpl-text">Hi [Name],
+
+I came across your work on [specific paper / project] while researching [imaging modality / skin cancer imaging], and I was especially interested in your approach to [specific technique or finding].
+
+I'm Angel Sanders, a Columbia ChemE MS student finishing research on nanobody-based immunotherapy. I have a nuclear engineering background and I'm seriously considering the radiology–dermatology intersection as a specialty path. I'd value 15–20 minutes to ask a few focused questions about how you positioned yourself and what you'd tell someone with an engineering background considering this path.
+
+Happy to work around your schedule.
+
+Best,
+Angel Sanders
+[LinkedIn URL]</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Angel's version — fill in these fields</div>
+          <div class="tpl-angel-text">[specific paper / project] → find on PubMed: "reflectance confocal microscopy melanoma [institution]"
+[imaging modality] → RCM, OCT, FDG PET-CT, dermoscopy
+[specific technique] → whatever their paper actually covers — read the abstract first
+[LinkedIn URL] → your actual URL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">02</span><span class="tpl-type warm">Warm Outreach</span></div>
+        <h3>Columbia Alumni / Mutual Connection</h3>
+        <p>When you share a school, program, or mutual contact. Highest reply rate of any template.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Fellow Columbia [program] reaching out</div>
+        <div class="tpl-text">Hi [Name],
+
+We both [shared connection — Columbia SEAS / Mailman / P&S, or mutual contact].
+
+I'm currently finishing my ChemE MS at Columbia, focused on nanobody development with Asher Williams' lab, and I've been studying the intersection of radiology and dermatology seriously. Your work on [specific project / paper] stood out to me.
+
+Would you be open to a brief conversation next week? I'd appreciate learning how you approached [specific decision — choosing radiology over derm, the imaging fellowship path, etc.].
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Angel's version — fill in these fields</div>
+          <div class="tpl-angel-text">[shared connection] → "Columbia SEAS" works for any Columbia grad; check if they were at Mailman (public health), P&S (medical school), or SEAS (engineering)
+[specific project] → one sentence from their LinkedIn or a paper you actually read
+[specific decision] → ask what they'd ask — "how you balanced research and clinical training" or "how the nuclear medicine fellowship shaped your practice"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">03</span><span class="tpl-type direct">Shadow Request</span></div>
+        <h3>Direct Shadowing Ask</h3>
+        <p>Specific, low-friction ask for 1 day of shadowing. Works best after a brief warm-up exchange.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Shadowing request — [specialty] at [institution]</div>
+        <div class="tpl-text">Hi [Name],
+
+Would you have space for a shadowing day in the next few weeks? I'm available any day that works for you — I'll adapt to your schedule.
+
+My goal is to observe [specific workflow — PET-CT reading, dermoscopy clinic, interventional cases] firsthand and come prepared with focused questions. I have a nuclear engineering background so the physics of imaging is familiar, but I want to understand the clinical judgment side.
+
+I'll stay out of the way and won't need anything explained in real time. Even two hours in a reading room would be enormously useful.
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Angel's version — fill in these fields</div>
+          <div class="tpl-angel-text">[specific workflow] → be precise: "PET-CT reading sessions for oncology staging" is better than "imaging work"
+The nuclear engineering line is your differentiator — always include it
+Keep it to 3 sentences max after the first line — the shorter the ask, the higher the reply rate</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">04</span><span class="tpl-type direct">Scheduling Message</span></div>
+        <h3>Direct Scheduling — After Initial Reply</h3>
+        <p>Send this after someone says "yes, happy to chat" — removes all friction from booking.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-text">Hi [Name],
+
+Would you have 20 minutes next week? I'm available [Tuesday 9–11am] or [Thursday after 3pm], but I can adjust to your calendar.
+
+My goal is to better understand how the radiology–dermatology intersection works in practice. I'll come prepared with three focused questions and I won't let it run over.
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Angel's version</div>
+          <div class="tpl-angel-text">Always offer exactly two time windows — not "whenever works for you"
+"Three focused questions" signals you respect their time
+Never say "pick your brain" — it's imprecise and overused</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">06</span><span class="tpl-type followup">Post-Shadowing Follow-Up</span></div>
+        <h3>After a Shadowing Day or Meeting</h3>
+        <p>Send within 24 hours. Reference something specific. Opens the door to staying in touch.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Thank you for having me — [date or clinic name]</div>
+        <div class="tpl-text">Hi [Name],
+
+Thank you for having me in the [reading room / clinic / OR] yesterday. I've been thinking about your point on [specific thing they said — even one sentence].
+
+The [modality / case / workflow] you walked me through clarified something I'd been trying to understand from the literature — [what it clarified for you].
+
+Would you be open to staying connected as I continue down this path? I'd value the occasional check-in.
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Angel's version — the key is specificity</div>
+          <div class="tpl-angel-text">The specific insight you reference is what makes this memorable — it proves you were actually paying attention
+Log the insight in your Shadowing Notebook (Tab III) the same day so you don't forget it
+"Would you be open to staying connected" is better than "Can I list you as a reference" — too early for that ask</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">07</span><span class="tpl-type followup">No-Response Follow-Up</span></div>
+        <h3>If They Haven't Replied in 10+ Days</h3>
+        <p>One gentle bump. Short. No guilt. If no reply after this, move on.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-text">Hi [Name],
+
+I wanted to briefly follow up in case my previous note got buried.
+
+If now isn't the right time, no problem at all. I'd still appreciate staying connected.
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Rule</div>
+          <div class="tpl-angel-text">One follow-up only. If no reply, move on — don't send a third message. Your energy is better spent finding the next contact.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sect-label">MD Outreach Targets — Where to Find People</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-bottom:20px;">
+    <div style="padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:8px;"><div style="font-weight:600;font-size:13px;margin-bottom:6px;">Columbia Radiology</div><div style="font-size:12.5px;color:var(--mid);">Search faculty directory. Nuclear medicine and body imaging faculty are your targets. <a href="https://www.radiology.columbia.edu/research/faculty" target="_blank">Faculty list →</a></div></div>
+    <div style="padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:8px;"><div style="font-weight:600;font-size:13px;margin-bottom:6px;">MSK Dermatology</div><div style="font-size:12.5px;color:var(--mid);">RCM and dermoscopy experts. Highest concentration of derm-imaging overlap in NYC. <a href="https://www.mskcc.org/departments/division-subspecialty-medicine/dermatology-service" target="_blank">Team →</a></div></div>
+    <div style="padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:8px;"><div style="font-weight:600;font-size:13px;margin-bottom:6px;">PubMed Search</div><div style="font-size:12.5px;color:var(--mid);">Search "reflectance confocal microscopy melanoma Columbia" or "nuclear medicine dermatology NYC" — message the corresponding author. <a href="https://pubmed.ncbi.nlm.nih.gov/?term=reflectance+confocal+microscopy+melanoma+New+York" target="_blank">Search →</a></div></div>
+    <div style="padding:15px;background:var(--surface);border:1px solid var(--line);border-radius:8px;"><div style="font-weight:600;font-size:13px;margin-bottom:6px;">Pre-Med Advisors</div><div style="font-size:12.5px;color:var(--mid);">Columbia's post-bac pre-med program has advisors who specifically help career-changers from STEM. <a href="https://sps.columbia.edu/academics/undergraduate/post-baccalaureate-pre-medical-studies" target="_blank">Contact →</a></div></div>
+  </div>
+</div>
+
+</div><!-- end track-md -->
+
+<!-- ════════════════════════════════════ CRE TRACK ════════════════════════════════════ -->
+<div class="track" id="track-cre">
+
+<!-- CRE PANEL: ENERGY APP -->
+<div class="panel active" id="panel-energy">
+  <div class="sect-label">Creative/Tech Track · Section I</div>
+
+  <div class="thesis">
+    <div class="ey">The Core Argument</div>
+    <h2>Access to energy is <em>inseparable</em><br>from human health and national wellbeing</h2>
+    <p>Energy poverty drives heat illness, respiratory disease, food insecurity, poor medication storage, and reduced educational attainment. In NYC, these inequities are distributed by ZIP code. Your nuclear engineering background makes you one of a small number of people who can argue this with scientific depth and real data — and build the tools to make it visible.</p>
+  </div>
+
+  <div class="sect-label">The Causal Chain — What the App Makes Visible</div>
+  <div class="chain">
+    <div class="chain-step"><div class="chain-icon">🏗️</div><div class="chain-title">Infrastructure</div><div class="chain-body">Grid aging, renewable mix, plant proximity, reliability</div></div>
+    <div class="chain-step"><div class="chain-icon">💸</div><div class="chain-title">Energy Cost</div><div class="chain-body">Utility burden as % of income, community solar access</div></div>
+    <div class="chain-step"><div class="chain-icon">🌡️</div><div class="chain-title">Environment</div><div class="chain-body">PM2.5, heat island index, cooling center gaps</div></div>
+    <div class="chain-step"><div class="chain-icon">🏥</div><div class="chain-title">Health</div><div class="chain-body">Asthma rates, heat illness, respiratory disease</div></div>
+    <div class="chain-step"><div class="chain-icon">📊</div><div class="chain-title">Wellbeing</div><div class="chain-body">Life expectancy gap, economic mobility</div></div>
+  </div>
+
+  <div class="sect-label">App — NYC Energy & Health Equity Explorer</div>
+  <div class="sect-intro" style="margin-bottom:20px;">A data-driven web tool mapping the relationship between energy access, environmental quality, and health outcomes across NYC's 59 community districts. Not just a map — a tool for making an argument visible with public data.</div>
+
+  <div class="sect-label">Data Sources — All Free, All Public</div>
+  <div class="ds-grid">
+    <div class="ds-card"><div class="ds-top"><div class="ds-name">EIA Open Data API</div><span class="ds-badge api">API</span></div><div class="ds-body">Electricity generation by fuel type, utility retail sales, state + county level. The primary energy mix data source.</div><a href="https://www.eia.gov/opendata/" target="_blank" style="font-size:12px;font-family:'DM Mono',monospace;">eia.gov/opendata →</a></div>
+    <div class="ds-card"><div class="ds-top"><div class="ds-name">NYC Open Data Portal</div><span class="ds-badge api">API</span></div><div class="ds-body">Cooling centers, heat illness deaths, community district shapefiles, building energy benchmarking, Con Edison service territory.</div><a href="https://data.cityofnewyork.us/" target="_blank" style="font-size:12px;font-family:'DM Mono',monospace;">data.cityofnewyork.us →</a></div>
+    <div class="ds-card"><div class="ds-top"><div class="ds-name">NYC DOHMH Environment & Health</div><span class="ds-badge">Dataset</span></div><div class="ds-body">PM2.5, NO2, ozone, asthma ED visits, heat illness hospitalizations, life expectancy — all by community district.</div><a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/beta/data-explorer/" target="_blank" style="font-size:12px;font-family:'DM Mono',monospace;">NYC Health Data Explorer →</a></div>
+    <div class="ds-card"><div class="ds-top"><div class="ds-name">DOE LEAD Tool</div><span class="ds-badge api">API</span></div><div class="ds-body">Low-Income Energy Affordability Data — energy burden (% income on energy) by census tract. The definitive energy poverty dataset.</div><a href="https://www.energy.gov/scep/slsc/lead-tool" target="_blank" style="font-size:12px;font-family:'DM Mono',monospace;">energy.gov/LEAD →</a></div>
+    <div class="ds-card"><div class="ds-top"><div class="ds-name">EPA eGRID + AirNow</div><span class="ds-badge api">API</span></div><div class="ds-body">Power plant locations, emissions by unit, generation mix. AirNow gives real-time and historical PM2.5/AQI. Both have free APIs.</div><a href="https://www.epa.gov/egrid" target="_blank" style="font-size:12px;font-family:'DM Mono',monospace;">EPA eGRID →</a></div>
+    <div class="ds-card"><div class="ds-top"><div class="ds-name">NYSERDA Program Data</div><span class="ds-badge">Dataset</span></div><div class="ds-body">Community solar subscriptions, NY-Sun installations, EV incentive uptake — downloadable with ZIP code granularity.</div><a href="https://www.nyserda.ny.gov/About/Publications/Research-and-Reports" target="_blank" style="font-size:12px;font-family:'DM Mono',monospace;">NYSERDA Reports →</a></div>
+  </div>
+
+  <div class="sect-label">Build Phases</div>
+  <div class="build-phase"><div class="bp-num">1</div><div class="bp-body"><div class="bp-title">SQL Foundation (Week 1–2 of SQL plan)</div><div class="bp-desc">Download NYC DOHMH + DOE LEAD datasets as CSVs. Import into SQLite. Write the core query: energy burden table LEFT JOIN asthma hospitalization table ON community_district. This JOIN is your finding.</div><div class="bp-tools"><span class="bp-tool">SQLite</span><span class="bp-tool"><a href="https://sqlitebrowser.org/" target="_blank">DB Browser (free)</a></span><span class="bp-tool">Python pandas</span></div></div></div>
+  <div class="build-phase"><div class="bp-num">2</div><div class="bp-body"><div class="bp-title">The Map (Week 3–4)</div><div class="bp-desc">Use <a href="https://leafletjs.com/" target="_blank">Leaflet.js</a> with NYC community district GeoJSON to render a choropleth map. Color districts by energy burden. Add a layer toggle for asthma rates. Already a compelling standalone product.</div><div class="bp-tools"><span class="bp-tool"><a href="https://leafletjs.com/" target="_blank">Leaflet.js</a></span><span class="bp-tool">GeoJSON (NYC Open Data)</span><span class="bp-tool"><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></span></div></div></div>
+  <div class="build-phase"><div class="bp-num">3</div><div class="bp-body"><div class="bp-title">The Story (Week 5)</div><div class="bp-desc">Add a sidebar "district report card" on click — showing energy burden, asthma rate, nearest peaker plant, community solar access, and a plain-language summary. You're not just showing data; you're making an argument.</div><div class="bp-tools"><span class="bp-tool">HTML/CSS sidebar</span><span class="bp-tool">Leaflet popup events</span></div></div></div>
+  <div class="build-phase"><div class="bp-num">4</div><div class="bp-body"><div class="bp-title">Publish + Share (Week 6)</div><div class="bp-desc">Deploy at a URL. Write a LinkedIn post with your headline finding. "Districts in the South Bronx have 4× the energy burden and 3× the asthma hospitalization rate of the Upper East Side. I built this to make that visible." Tag your GitHub Pages URL.</div><div class="bp-tools"><span class="bp-tool"><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></span><span class="bp-tool"><a href="https://vercel.com/" target="_blank">Vercel</a></span></div></div></div>
+</div>
+
+<!-- CRE PANEL: RELATED PROJECTS + ENTERPRISE -->
+<div class="panel" id="panel-projects">
+  <div class="sect-label">Creative/Tech Track · Section II</div>
+  <h2 class="sect-title">More Projects — <em>Consumer-First Ideas</em></h2>
+  <p class="sect-intro">These projects use the same skills — SQL, public APIs, data visualization, product thinking — but lead with a consumer experience. Each one has a real user who isn't a data scientist or a policy analyst. Click any section label inside a card to expand it.</p>
+
+  <div class="callout orange"><strong>Why consumer beats enterprise as a starting point:</strong> Enterprise buyers pay more, but consumer traction is what gets you interviews. A live app with 500 users tells a better story than a polished deck. Build for consumers first, let the enterprise use case follow — that's exactly how BlocPower, Solstice, and every successful climate-tech company started. And the SQL skills are identical either way.</div>
+
+  <div class="cproj-cards">
+
+    <!-- CARD 1 -->
+    <div class="cproj-card">
+      <div class="cproj-card-top">
+        <div class="cproj-header"><span class="cproj-emoji">💡</span><span class="cproj-badge b1">Consumer App</span></div>
+        <h3>My Energy Bill Explainer</h3>
+        <div class="hook">"Why did my Con Edison bill spike last month?"</div>
+        <p>A mobile-friendly tool where NYC residents enter their address and see: their building's energy efficiency score (from NYC benchmarking data), how their bill compares to similar buildings nearby, which NYSERDA rebates they're eligible for, and whether community solar would save them money. Real numbers, no jargon.</p>
+        <div class="cproj-tags"><span class="cproj-tag">NYC Open Data</span><span class="cproj-tag">NYSERDA API</span><span class="cproj-tag">DOE LEAD</span><span class="cproj-tag">Address lookup</span><span class="cproj-tag">~4 weeks</span></div>
+      </div>
+      <div class="cproj-sections">
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Why people would actually use this <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>Con Edison bills are notoriously opaque — people pay them without understanding them</li><li>NYC's community solar programs are underutilized because no one explains them in plain language at the moment of pain (the bill)</li><li>Building benchmarking data exists but is buried in a government portal — this surfaces it with a human interface</li><li>The "what's available in my area" layer turns frustration into a call to action</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Interview talking points <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>"I built this because I couldn't answer 'why is my bill so high?' without visiting three government websites. The product question was: what does a person need to see in the first 10 seconds to feel like they understand their situation?"</li><li>"The SQL underneath is a JOIN between building benchmarking data, energy burden by census tract, and NYSERDA program eligibility by ZIP. The consumer experience hides all of that — which is exactly what good product work does."</li><li>"For Pinterest: this is the same translation problem you solve every day — complex, overwhelming information made personally legible. I just did it for energy, not home decor."</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Enterprise angle (bonus) <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>Con Edison would pay for aggregated building-level efficiency + engagement data to target their weatherization outreach</li><li>NYSERDA would pay for this as a consumer acquisition tool for community solar programs</li><li>Apartment listing platforms (StreetEasy, Zillow) would integrate this as an "energy cost" feature for renters</li></ul></div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="cproj-card">
+      <div class="cproj-card-top">
+        <div class="cproj-header"><span class="cproj-emoji">🌬️</span><span class="cproj-badge b2">Health + Consumer</span></div>
+        <h3>Breathe NYC</h3>
+        <div class="hook">"Is it safe to run outside in my neighborhood today?"</div>
+        <p>Real-time + forecast air quality app hyper-localized to NYC community districts. Shows AQI, PM2.5, and ozone. Adds context: "Today's air quality in Mott Haven is driven by I-278 traffic + the Hunts Point peaker plant running at capacity." Includes a weekly "cumulative exposure" score so you can see how your neighborhood compares over time, not just today.</p>
+        <div class="cproj-tags"><span class="cproj-tag">EPA AirNow API</span><span class="cproj-tag">EPA eGRID</span><span class="cproj-tag">Real-time data</span><span class="cproj-tag">Push notifications</span><span class="cproj-tag">~3 weeks</span></div>
+      </div>
+      <div class="cproj-sections">
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Why this is different from existing air quality apps <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>IQAir and AirVisual show AQI numbers — they don't explain <em>why</em> your neighborhood has bad air today</li><li>The "peaker plant is running" context is only possible if you've joined grid operation data to air quality data — that's your SQL advantage</li><li>The cumulative weekly score reframes air quality from "today's problem" to "your neighborhood's chronic condition" — which is the actual health story</li><li>Parents with asthmatic kids, outdoor athletes, and elderly residents are a real underserved user group for this</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Interview talking points <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>"The app exists because I was frustrated that air quality apps tell you a number but not a cause. I'm a nuclear engineer — I understand what a peaker plant running at capacity means for a neighborhood's PM2.5. That context changes what you do with the information."</li><li>"I used a LAG() window function to calculate rolling 7-day PM2.5 averages by district. That's the same cumulative metric design used in product dashboards to smooth out daily noise."</li><li>"For a med school interview: this is environmental medicine at the consumer level. The same data that tells a runner whether to go outside tells a physician what their patient was breathing last week."</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ SQL highlight query <span>▾</span></button>
+        <div class="cproj-section-body">
+          <div class="milestone-sql" style="margin-top:0;">-- 7-day rolling average PM2.5 by district
+SELECT district, measurement_date, pm25,
+  AVG(pm25) OVER (
+    PARTITION BY district
+    ORDER BY measurement_date
+    ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+  ) AS rolling_7day_avg
+FROM air_quality
+ORDER BY district, measurement_date;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="cproj-card">
+      <div class="cproj-card-top">
+        <div class="cproj-header"><span class="cproj-emoji">🏠</span><span class="cproj-badge b3">Real Estate + Consumer</span></div>
+        <h3>True Cost of a NYC Apartment</h3>
+        <div class="hook">"What does this apartment actually cost to live in?"</div>
+        <p>Enter an address — get back: estimated monthly energy costs from building benchmarking data, heat island index (summer cooling burden), nearest community solar enrollment (potential savings), local air quality score, and distance to the nearest Con Edison peaker plant. StreetEasy shows rent. This shows the real picture.</p>
+        <div class="cproj-tags"><span class="cproj-tag">NYC Building Benchmarking</span><span class="cproj-tag">NYC Open Data</span><span class="cproj-tag">Geocoding API</span><span class="cproj-tag">~4 weeks</span></div>
+      </div>
+      <div class="cproj-sections">
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Why this is sticky <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>NYC renters compare apartments on rent and square footage — energy costs and environmental quality are invisible even though they're real costs</li><li>A building's energy benchmark score is a direct predictor of heating/cooling bills — this data is public but inaccessible to most consumers</li><li>Organic social traction: "I looked up my apartment and learned it costs $180/month more to cool than the building next door" is a shareable, surprising finding</li><li>Natural integration point with apartment hunting — could become a Chrome extension for StreetEasy</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Interview talking points <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>"This is a transparency product. All this data is public — building energy benchmarks, heat island scores, peaker plant locations — but it takes a data engineer to assemble it. My job was to make it one search box."</li><li>"The core SQL is a geospatial JOIN: find all records within X miles of an address. I approximated it with bounding box queries before considering PostGIS. That constraint forced me to think about what 'nearby' actually means for the user."</li><li>"For Etsy or Pinterest: I understand how to build the data infrastructure that makes a personalized, location-aware experience feel effortless. This project is evidence."</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Enterprise angle <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>StreetEasy / Zillow: integrate as a listing feature — "Energy Score" alongside Walk Score and Transit Score</li><li>Real estate developers: pre-purchase due diligence tool for energy risk assessment</li><li>Banks: mortgage risk modeling incorporating energy burden and climate exposure</li></ul></div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="cproj-card">
+      <div class="cproj-card-top">
+        <div class="cproj-header"><span class="cproj-emoji">🎨</span><span class="cproj-badge b4">Creative + Consumer</span></div>
+        <h3>Commission Portfolio + Art Marketplace</h3>
+        <div class="hook">"I commissioned an artist — it was the best gift I ever gave."</div>
+        <p>Your high school commissioned art portfolio, revived as a searchable, filterable web app. Tagging system by medium, style, price range, and vibe. A commission inquiry form that captures project details, timeline, and budget. SQL backend tracks your commission history, average turnaround, and most requested styles — analytics that inform your pricing.</p>
+        <div class="cproj-tags"><span class="cproj-tag"><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></span><span class="cproj-tag"><a href="https://airtable.com" target="_blank">Airtable</a></span><span class="cproj-tag">SQLite analytics</span><span class="cproj-tag">~2 weeks</span></div>
+      </div>
+      <div class="cproj-sections">
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Why this is the fastest to build and ship <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>You have the raw material already — your portfolio just needs to be digitized and organized</li><li>No API keys or data downloads required — you are the data source</li><li>It's immediately income-generating: an active commission inquiry form + social share = real clients</li><li>The SQL analytics layer (which styles sell best, what's the average commission price) is genuinely useful and interview-ready</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Interview talking points <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>"I built this because I was a commissioned artist throughout high school and had lost track of my own portfolio. The SQL analysis showed me that abstract work had 40% higher margins than portraits — which changed my pricing. That's the same kind of creator monetization insight Pinterest's analytics team works on at scale."</li><li>"The schema I designed — artist, commission, client, style, medium, status — is structurally identical to any marketplace database. I can draw that ERD right now."</li><li>"I'm an engineer who makes things by hand. That combination is unusual and I want to work somewhere that values both."</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ SQL highlight query <span>▾</span></button>
+        <div class="cproj-section-body">
+          <div class="milestone-sql" style="margin-top:0;">-- Which styles have the highest average price?
+SELECT style, medium,
+  COUNT(*) AS total_commissions,
+  AVG(price_usd) AS avg_price,
+  AVG(days_to_complete) AS avg_turnaround
+FROM commissions
+WHERE status = 'completed'
+GROUP BY style, medium
+ORDER BY avg_price DESC;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="cproj-card">
+      <div class="cproj-card-top">
+        <div class="cproj-header"><span class="cproj-emoji">💊</span><span class="cproj-badge b5">Health + Consumer</span></div>
+        <h3>Med School Prep Tracker</h3>
+        <div class="hook">"I want to see exactly where I stand and what's left."</div>
+        <p>A personal dashboard for tracking your own med school prep: MCAT section scores over time, clinical hours by specialty, prereq status, shadowing entries, and school application deadlines. Connects directly to this plan. Built in SQL — the database models the exact same structure as any product user funnel.</p>
+        <div class="cproj-tags"><span class="cproj-tag">SQLite local DB</span><span class="cproj-tag">Python + Streamlit</span><span class="cproj-tag">Chart.js</span><span class="cproj-tag">~2 weeks</span></div>
+      </div>
+      <div class="cproj-sections">
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Why this is a secretly great portfolio piece <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>You built a tool for a real user (yourself) to solve a real problem — that's the strongest possible product story</li><li>The data model is a funnel: prerequisites → MCAT prep → applications → interviews → matriculation. That funnel structure is universal in product analytics</li><li>Practice score trends + time-series SQL (LAG, rolling averages) give you a reason to use advanced SQL concepts on meaningful personal data</li><li>Shows that you think in systems even about your own life — which is exactly what a good ops or PM candidate does</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Interview talking points <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>"I'm tracking my med school prep in a SQL database because I needed to answer questions like 'which MCAT sections are improving fastest?' — and a spreadsheet doesn't let me ask that. I use LAG() to calculate week-over-week improvement by section."</li><li>"The schema is a classic funnel: user → milestone → completion_date → status. That structure directly maps to how any product team tracks user activation. I designed it that way on purpose."</li><li>"For any analytics or ops interview: this is proof that I don't just learn SQL from exercises. I use it to make decisions about my own life."</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ SQL highlight query <span>▾</span></button>
+        <div class="cproj-section-body">
+          <div class="milestone-sql" style="margin-top:0;">-- MCAT section improvement week-over-week
+SELECT section, practice_date, score,
+  LAG(score) OVER (PARTITION BY section ORDER BY practice_date) AS prev_score,
+  score - LAG(score) OVER (PARTITION BY section ORDER BY practice_date) AS delta
+FROM mcat_practice_scores
+ORDER BY section, practice_date;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="cproj-card">
+      <div class="cproj-card-top">
+        <div class="cproj-header"><span class="cproj-emoji">🌿</span><span class="cproj-badge b1">Civic + Consumer</span></div>
+        <h3>Green NYC — What's Actually Near Me</h3>
+        <div class="hook">"I want to do something about my carbon footprint — where do I start?"</div>
+        <p>Address-based tool that shows: community solar programs you can join today, Con Edison green power enrollment, EV charging stations within walking distance, building efficiency rebates you're eligible for, and a personalized "most impactful first step" recommendation. Aggregates what currently requires 6 government websites.</p>
+        <div class="cproj-tags"><span class="cproj-tag"><a href="https://developer.nrel.gov/docs/electricity/" target="_blank">NREL API</a></span><span class="cproj-tag">NYSERDA data</span><span class="cproj-tag">NYC Open Data</span><span class="cproj-tag">~3 weeks</span></div>
+      </div>
+      <div class="cproj-sections">
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Why people would use this <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>Climate intent is high but action is low — the barrier is almost always friction, not motivation</li><li>Community solar programs in NYC are heavily undersubscribed despite being financially beneficial — the enrollment process is just confusing</li><li>The "personalized first step" recommendation is the key product insight: people don't want a list of options, they want a recommendation</li><li>Shareable: "I just signed up for community solar through this tool and I'm saving $40/month" is organic word-of-mouth</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Interview talking points <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li>"The hard product problem here wasn't building the map — it was the recommendation logic. I used a decision tree based on building type, income bracket, and current energy spending to surface one action, not six. That constraint forced real prioritization thinking."</li><li>"The SQL is a multi-table JOIN across program eligibility rules, building data, and geographic proximity. The user sees a button that says 'enroll.' The complexity is entirely hidden."</li><li>"This is the product principle I'd bring to any ops role: data should answer a question, not present a dataset."</li></ul></div>
+        <button class="cproj-section-btn" onclick="toggleCprojSection(this)">↗ Enterprise angle <span>▾</span></button>
+        <div class="cproj-section-body"><ul><li><a href="https://www.solstice.us/" target="_blank">Solstice</a> + <a href="https://www.arcadia.com/" target="_blank">Arcadia</a>: lead generation for community solar subscribers</li><li>NYC DCAS: white-label version for NYC's own sustainability outreach</li><li>Lease-up teams at residential buildings: differentiation tool for eco-conscious renters</li></ul></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CRE PANEL: SQL -->
+<div class="panel" id="panel-sql">
+  <div class="sect-label">Creative/Tech Track · Section III</div>
+  <h2 class="sect-title">Free SQL Mastery — <em>4-Week Plan</em></h2>
+  <p class="sect-intro">All resources are free. Each week runs parallel to the energy project — by Week 4 you'll have real queries on real data you care about. That's the strongest possible interview artifact.</p>
+
+  <div class="callout"><strong>For you specifically:</strong> JOINs = pandas merge() in Python — same idea, different syntax. Budget an extra day there. 15–45 min/day gets you genuinely interview-ready by Week 4.</div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:24px;">
+    <div style="padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:7px;text-align:center;"><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;">Week 1</div><div class="wpbar"><div class="wpbar-inner" id="w1-bar" style="width:0%"></div></div><div style="font-size:12.5px;color:var(--mid);" id="w1-count">0 / 3</div></div>
+    <div style="padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:7px;text-align:center;"><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;">Week 2</div><div class="wpbar"><div class="wpbar-inner" id="w2-bar" style="width:0%"></div></div><div style="font-size:12.5px;color:var(--mid);" id="w2-count">0 / 3</div></div>
+    <div style="padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:7px;text-align:center;"><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;">Week 3</div><div class="wpbar"><div class="wpbar-inner" id="w3-bar" style="width:0%"></div></div><div style="font-size:12.5px;color:var(--mid);" id="w3-count">0 / 3</div></div>
+    <div style="padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:7px;text-align:center;"><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;">Week 4</div><div class="wpbar"><div class="wpbar-inner" id="w4-bar" style="width:0%"></div></div><div style="font-size:12.5px;color:var(--mid);" id="w4-count">0 / 3</div></div>
+  </div>
+
+  <div class="sql-week">
+    <div class="sql-wh" onclick="toggleWeek(this)"><span class="sql-wnum">Week 1</span><span class="sql-wtitle">Foundations — SELECT, WHERE, ORDER BY</span><span class="sql-wtoggle">▾</span></div>
+    <div class="sql-wb">
+      <div class="sql-res"><div class="sql-icon">🎯</div><div class="sql-rb"><div class="sql-rname"><a href="https://sqlbolt.com" target="_blank">SQLBolt — Lessons 1–7</a></div><a class="sql-rurl" href="https://sqlbolt.com" target="_blank">sqlbolt.com</a><div class="sql-rdesc">20 interactive browser-based lessons. No setup, instant feedback. The cleanest beginner experience available.</div></div><input type="checkbox" class="sql-check" data-week="1" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+      <div class="sql-res"><div class="sql-icon">🎬</div><div class="sql-rb"><div class="sql-rname"><a href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank">freeCodeCamp SQL Full Course (YouTube)</a></div><a class="sql-rurl" href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank">4-hour free course — watch Sections 1–3 this week</a><div class="sql-rdesc">See SQL running in a real environment. Pairs with SQLBolt exercises.</div></div><input type="checkbox" class="sql-check" data-week="1" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+      <div class="sql-res"><div class="sql-icon">📖</div><div class="sql-rb"><div class="sql-rname"><a href="https://w3schools.com/sql" target="_blank">W3Schools SQL Reference</a></div><a class="sql-rurl" href="https://w3schools.com/sql" target="_blank">w3schools.com/sql — bookmark permanently</a><div class="sql-rdesc">Not a course — fastest syntax reference on the internet. Use it when you forget how GROUP BY works.</div></div><span class="sql-badge t">Reference</span></div>
+
+      <div class="sql-milestones">
+        <div class="sql-milestones-lbl">✓ Week 1 Checkpoints</div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w1_1">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Download the NYC DOHMH asthma dataset</div><div class="milestone-sub">Save as CSV, open in <a href="https://sqlitebrowser.org/" target="_blank">DB Browser for SQLite</a> — <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/beta/data-explorer/" target="_blank">NYC Health Data Explorer →</a></div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w1_2">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Write your first real SELECT query on live data</div><div class="milestone-sub">Pull all rows from the asthma table. Add WHERE to filter to one borough.</div>
+          <div class="milestone-sql">SELECT * FROM asthma_rates WHERE borough = 'Bronx';</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w1_3">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Find the 5 highest-asthma districts — first real insight</div><div class="milestone-sub">ORDER BY + LIMIT on your actual data before any JOIN.</div>
+          <div class="milestone-sql">SELECT district, asthma_rate FROM asthma_rates
+ORDER BY asthma_rate DESC LIMIT 5;</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w1_4">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Pass SQLBolt Lessons 1–7 with all green scores</div><div class="milestone-sub">Don't proceed to Week 2 until all 7 are complete.</div></div>
+        </div>
+      </div>
+      <div class="sql-journal"><div class="sql-journal-lbl">📓 Week 1 Journal</div><textarea id="sql_w1_notes" placeholder="What clicked? What confused you? Any analogies that helped?" onchange="saveNote('sql_w1_notes',this.value)"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sql-week">
+    <div class="sql-wh" onclick="toggleWeek(this)"><span class="sql-wnum">Week 2</span><span class="sql-wtitle">JOINs & Aggregations — the Energy Equity Query</span><span class="sql-wtoggle">▾</span></div>
+    <div class="sql-wb">
+      <div class="sql-res"><div class="sql-icon">🎯</div><div class="sql-rb"><div class="sql-rname"><a href="https://sqlbolt.com/lesson/select_queries_with_joins" target="_blank">SQLBolt — JOINs (Lessons 6–12)</a></div><a class="sql-rurl" href="https://sqlbolt.com/lesson/select_queries_with_joins" target="_blank">sqlbolt.com/lesson/select_queries_with_joins</a><div class="sql-rdesc">The hardest week. JOINs = pandas merge() — same idea, different syntax. Budget an extra day here.</div></div><input type="checkbox" class="sql-check" data-week="2" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+      <div class="sql-res"><div class="sql-icon">📊</div><div class="sql-rb"><div class="sql-rname"><a href="https://mode.com/sql-tutorial" target="_blank">Mode Analytics SQL Tutorial</a></div><a class="sql-rurl" href="https://mode.com/sql-tutorial" target="_blank">mode.com/sql-tutorial — free with account</a><div class="sql-rdesc">Industry-level tutorial for analysts. GROUP BY, aggregations, subqueries — the way they're used in real tech companies.</div></div><input type="checkbox" class="sql-check" data-week="2" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+      <div class="sql-res"><div class="sql-icon">🧩</div><div class="sql-rb"><div class="sql-rname"><a href="https://sqlzoo.net" target="_blank">SQLZoo — JOIN section</a></div><a class="sql-rurl" href="https://sqlzoo.net" target="_blank">sqlzoo.net — no account needed</a><div class="sql-rdesc">Problems of increasing difficulty on real datasets. "More JOIN" section is where understanding cements.</div></div><input type="checkbox" class="sql-check" data-week="2" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+
+      <div class="sql-milestones">
+        <div class="sql-milestones-lbl">✓ Week 2 Checkpoints</div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w2_1">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Download the DOE LEAD energy burden data</div><div class="milestone-sub">Census-tract level energy burden CSV — <a href="https://www.energy.gov/scep/slsc/lead-tool" target="_blank">DOE LEAD Tool →</a>. Import as a second table.</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w2_2">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Write the core JOIN — the energy-health finding</div><div class="milestone-sub">This is the query the whole project is built around.</div>
+          <div class="milestone-sql">SELECT a.district, a.asthma_rate, e.energy_burden_pct
+FROM asthma_rates a
+LEFT JOIN energy_burden e ON a.district = e.community_district
+ORDER BY e.energy_burden_pct DESC;</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w2_3">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Add GROUP BY to find borough averages</div><div class="milestone-sub">Aggregate to borough level — which borough has the worst combined burden?</div>
+          <div class="milestone-sql">SELECT borough,
+  AVG(a.asthma_rate) AS avg_asthma,
+  AVG(e.energy_burden_pct) AS avg_burden
+FROM asthma_rates a
+LEFT JOIN energy_burden e ON a.district = e.community_district
+GROUP BY borough ORDER BY avg_burden DESC;</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w2_4">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Write your headline finding in one sentence</div><div class="milestone-sub">e.g. "Districts in the South Bronx carry 4× the energy burden and 3× the asthma rate of the Upper East Side." This is your LinkedIn post.</div></div>
+        </div>
+      </div>
+      <div class="sql-journal"><div class="sql-journal-lbl">📓 Week 2 Journal</div><textarea id="sql_w2_notes" placeholder="How did JOINs click for you? What was your 'aha' moment?" onchange="saveNote('sql_w2_notes',this.value)"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sql-week">
+    <div class="sql-wh" onclick="toggleWeek(this)"><span class="sql-wnum">Week 3</span><span class="sql-wtitle">Subqueries, CTEs, Window Functions</span><span class="sql-wtoggle">▾</span></div>
+    <div class="sql-wb">
+      <div class="sql-res"><div class="sql-icon">🎯</div><div class="sql-rb"><div class="sql-rname"><a href="https://sqlbolt.com/topic/subqueries" target="_blank">SQLBolt Advanced — Subqueries & Window Functions</a></div><a class="sql-rurl" href="https://sqlbolt.com/topic/subqueries" target="_blank">sqlbolt.com/topic/subqueries</a><div class="sql-rdesc">Window functions (ROW_NUMBER, RANK, LAG, LEAD) separate junior from senior SQL users and appear constantly in analytics interviews.</div></div><input type="checkbox" class="sql-check" data-week="3" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+      <div class="sql-res"><div class="sql-icon">🏛️</div><div class="sql-rb"><div class="sql-rname"><a href="https://online.stanford.edu/courses/soe-ydatabases0005-databases-advanced-topics-sql" target="_blank">Stanford — Databases: Advanced Topics in SQL (free audit)</a></div><a class="sql-rurl" href="https://online.stanford.edu/courses/soe-ydatabases0005-databases-advanced-topics-sql" target="_blank">online.stanford.edu — free audit</a><div class="sql-rdesc">Professor-led, rigorous. CTEs, analytical functions at depth most tutorials skip. Your academic background means you'll absorb this fast.</div></div><input type="checkbox" class="sql-check" data-week="3" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+      <div class="sql-res"><div class="sql-icon">💻</div><div class="sql-rb"><div class="sql-rname"><a href="https://devgym.oracle.com/pls/apex/dg/class/databases-for-developers-foundations.html" target="_blank">Oracle Dev Gym — free + certificate</a></div><a class="sql-rurl" href="https://devgym.oracle.com/pls/apex/dg/class/databases-for-developers-foundations.html" target="_blank">devgym.oracle.com — 12-part, free certificate</a><div class="sql-rdesc">Covers CTEs (WITH clauses) — the modern readable alternative to nested subqueries. Certificate included.</div></div><input type="checkbox" class="sql-check" data-week="3" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+
+      <div class="sql-milestones">
+        <div class="sql-milestones-lbl">✓ Week 3 Checkpoints</div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w3_1">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Build the composite priority score with RANK()</div><div class="milestone-sub">Rank districts by both burden and asthma, then average the ranks to find highest combined need.</div>
+          <div class="milestone-sql">SELECT district,
+  RANK() OVER (ORDER BY energy_burden_pct DESC) AS burden_rank,
+  RANK() OVER (ORDER BY asthma_rate DESC) AS health_rank,
+  (RANK() OVER (ORDER BY energy_burden_pct DESC) +
+   RANK() OVER (ORDER BY asthma_rate DESC)) / 2.0 AS priority_score
+FROM combined_data ORDER BY priority_score;</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w3_2">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Rewrite your messiest query as a CTE</div><div class="milestone-sub">Take Week 2's GROUP BY query and wrap it in a WITH clause — cleaner and reusable.</div>
+          <div class="milestone-sql">WITH borough_averages AS (
+  SELECT borough, AVG(asthma_rate) AS avg_asthma,
+    AVG(energy_burden_pct) AS avg_burden
+  FROM combined_data GROUP BY borough
+)
+SELECT * FROM borough_averages
+WHERE avg_burden > (SELECT AVG(avg_burden) FROM borough_averages);</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w3_3">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Add a third dataset — EPA peaker plant locations</div><div class="milestone-sub">Download from <a href="https://www.epa.gov/egrid" target="_blank">EPA eGRID →</a>. Add plant proximity as a column. Now you have 3 tables joined.</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w3_4">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Name your top 5 "highest-need" districts</div><div class="milestone-sub">These become your map's highlighted districts and your interview example. Write them down.</div></div>
+        </div>
+      </div>
+      <div class="sql-journal"><div class="sql-journal-lbl">📓 Week 3 Journal</div><textarea id="sql_w3_notes" placeholder="Which window functions made the most sense for your data?" onchange="saveNote('sql_w3_notes',this.value)"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sql-week">
+    <div class="sql-wh" onclick="toggleWeek(this)"><span class="sql-wnum">Week 4</span><span class="sql-wtitle">Interview Prep — LeetCode, HackerRank, Real Projects</span><span class="sql-wtoggle">▾</span></div>
+    <div class="sql-wb">
+      <div class="sql-res"><div class="sql-icon">🏋️</div><div class="sql-rb"><div class="sql-rname"><a href="https://www.hackerrank.com/domains/sql" target="_blank">HackerRank SQL Challenges</a></div><a class="sql-rurl" href="https://www.hackerrank.com/domains/sql" target="_blank">hackerrank.com/domains/sql — profile is shareable</a><div class="sql-rdesc">Free graded challenges. Solve 20 Easy + 10 Medium. Structured exactly like interview questions. Completion is visible on your LinkedIn profile.</div></div><input type="checkbox" class="sql-check" data-week="4" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+      <div class="sql-res"><div class="sql-icon">🎲</div><div class="sql-rb"><div class="sql-rname"><a href="https://leetcode.com/problemset/database/" target="_blank">LeetCode SQL (Free Tier)</a></div><a class="sql-rurl" href="https://leetcode.com/problemset/database/" target="_blank">leetcode.com/problemset/database</a><div class="sql-rdesc">Gold standard for interview prep. 200+ free problems. Focus "Easy" tier first — many are exact questions used at Pinterest, Etsy, and Spotify.</div></div><input type="checkbox" class="sql-check" data-week="4" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+      <div class="sql-res"><div class="sql-icon">📈</div><div class="sql-rb"><div class="sql-rname"><a href="https://www.stratascratch.com" target="_blank">StrataScratch — Real Company Questions</a></div><a class="sql-rurl" href="https://www.stratascratch.com" target="_blank">stratascratch.com — free tier</a><div class="sql-rdesc">Real SQL questions from Google, Airbnb, Netflix. Filter for "strategy & ops" style — closest to what you'll face at consumer tech companies.</div></div><input type="checkbox" class="sql-check" data-week="4" onchange="updateSQLProgress()" style="margin-top:4px;accent-color:var(--teal);flex-shrink:0;"></div>
+
+      <div class="sql-milestones">
+        <div class="sql-milestones-lbl">✓ Week 4 Checkpoints — Ship It</div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w4_1">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Pass 20 HackerRank Easy SQL challenges</div><div class="milestone-sub">Your public profile shows completion — shareable on LinkedIn. Don't skip this step.</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w4_2">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Export your final analysis as a clean CSV</div><div class="milestone-sub">district, energy_burden_rank, asthma_rank, priority_score, solar_access, peaker_plant_proximity — this feeds your map.</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w4_3">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Deploy the Leaflet map to GitHub Pages</div><div class="milestone-sub">Live at a URL. This is your portfolio item — it needs to exist at a link you can drop in a cover letter.</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w4_4">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Write + publish your LinkedIn post</div><div class="milestone-sub">"Districts in the South Bronx have 4× the energy burden and 3× the asthma rate of the Upper East Side. I built this to make that visible." + your URL. Screenshot the engagement.</div></div>
+        </div>
+        <div class="milestone-item" onclick="toggleMilestone(this)" data-id="m_w4_5">
+          <div class="milestone-box"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div style="flex:1"><div class="milestone-title">Practice explaining the project out loud — 2 minutes</div><div class="milestone-sub">Record yourself. Does it sound like a data project or like a product story? It should sound like a product story.</div></div>
+        </div>
+      </div>
+      <div class="sql-journal"><div class="sql-journal-lbl">📓 Week 4 Journal</div><textarea id="sql_w4_notes" placeholder="What's your headline finding in one sentence? What was harder than expected?" onchange="saveNote('sql_w4_notes',this.value)"></textarea></div>
+    </div>
+  </div>
+</div>
+
+<!-- CRE PANEL: INTERVIEW SCRIPTS -->
+<div class="panel" id="panel-interview">
+  <div class="sect-label">Creative/Tech Track · Section IV</div>
+  <h2 class="sect-title">Interview <em>Scripts</em></h2>
+  <p class="sect-intro">The same project tells a different story depending on the room. Click any question to expand the full answer — these are complete, usable scripts, not bullet points.</p>
+
+  <div class="callout green"><strong>The through-line that works everywhere:</strong> "I have a nuclear engineering background — I think about energy as a system with physics, economics, and human consequences. When I looked at NYC through that lens, I saw that energy access isn't distributed equally, and the places with the worst access have the worst health outcomes. I built a tool to make that argument visible with public data."</div>
+
+  <div class="sect-label">Creative Tech & Consumer Product (Pinterest, Etsy, Spotify)</div>
+  <div class="qa-item"><div class="qa-q" onclick="toggleQA(this)"><span>"Tell me about a project you built that you're proud of."</span><span class="qa-arr">▾</span></div><div class="qa-ans"><div class="qa-ctx">Context: Pinterest / Etsy ops or strategy interview</div><div class="qa-text"><p>"I built an interactive map called the NYC Energy & Health Equity Explorer. The core idea is simple but the data is surprising: where you live in New York City determines your energy costs, your air quality, and your health outcomes — and these three things move together in a pattern that's almost invisible unless you visualize it across all 59 community districts at once."</p><p>"I pulled data from six public APIs — EIA, NYC Open Data, EPA eGRID, DOE LEAD tool — wrote SQL queries to find the correlation between energy burden and asthma hospitalization rates, then built a choropleth map where you click any neighborhood and see its full 'energy health report card.'"</p><p>"What I'm most proud of isn't the technical piece — it's the product decision to make it actionable. I didn't just show a diagnosis. I added a 'what you can do' layer: available community solar programs, cooling center enrollment, and local health resources for each district. That's the product instinct I want to bring to a role like this — turning data into something people can actually use."</p></div></div></div>
+
+  <div class="qa-item"><div class="qa-q" onclick="toggleQA(this)"><span>"Walk me through a time you used data to make a decision."</span><span class="qa-arr">▾</span></div><div class="qa-ans"><div class="qa-ctx">Context: Strategy & Operations analyst interview</div><div class="qa-text"><p>"In my energy equity project, I wanted to understand which NYC neighborhoods should be prioritized for community solar outreach. I joined four datasets — energy burden by census tract, asthma hospitalization rates by community district, existing solar installations from NYSERDA, and proximity to fossil fuel peaker plants from EPA eGRID."</p><p>"The SQL query I was most proud of ranked districts by a composite score: high energy burden, high health impact, low current solar access. The top five districts were all in the South Bronx and North Brooklyn — which matched what community health advocates had been saying for years, but the data made it specific and actionable."</p><p>"The decision that followed was a product decision: those five districts became the 'featured' areas in the app, with expanded data and resource links. Data told me where to focus; product thinking told me how to present it."</p></div></div></div>
+
+  <div class="qa-item"><div class="qa-q" onclick="toggleQA(this)"><span>"Why do you want to work in consumer tech?"</span><span class="qa-arr">▾</span></div><div class="qa-ans"><div class="qa-ctx">Context: Pinterest / consumer product company</div><div class="qa-text"><p>"I come from a deeply technical background — nuclear engineering, chemical engineering, molecular biology research. What drew me to consumer tech is the scale of impact. When I built the energy equity tool, the hardest part wasn't the SQL or the mapping — it was the product question: how do you make a complex, multi-variable dataset feel legible and actionable to someone who isn't a data scientist?"</p><p>"That's the exact problem Pinterest solves every day for 500 million people — taking an overwhelming flood of information and making it feel personally relevant and usable. I want to work on that translation problem at scale."</p></div></div></div>
+
+  <div class="sect-label">Consulting & Strategy (McKinsey, BCG, Deloitte Life Sciences)</div>
+  <div class="qa-item"><div class="qa-q" onclick="toggleQA(this)"><span>"Tell me about a time you structured a complex problem."</span><span class="qa-arr">▾</span></div><div class="qa-ans"><div class="qa-ctx">Context: Consulting first-round behavioral</div><div class="qa-text"><p>"I built a project analyzing the relationship between energy infrastructure and public health outcomes in New York City. Before writing a single line of code, I had to frame the problem correctly — which is really a structure question: energy poverty is a cause, not an outcome. So I mapped the causal chain: grid infrastructure → energy costs → household burden → environmental exposure → health outcomes → community wellbeing."</p><p>"That structure told me which datasets I needed, which relationships to test, and which findings would be actionable versus merely interesting. The key finding was that energy burden was more predictive of asthma hospitalization rates than PM2.5 alone — suggesting that affordability interventions may be more cost-effective health investments than simply reducing emissions. That's the kind of insight that only emerges when you structure the problem correctly before you touch the data."</p></div></div></div>
+
+  <div class="sect-label">Medical School (MD & MD-PhD Programs)</div>
+  <div class="qa-item"><div class="qa-q" onclick="toggleQA(this)"><span>"Why medicine? Why not stay in engineering or research?"</span><span class="qa-arr">▾</span></div><div class="qa-ans"><div class="qa-ctx">Context: MD admissions interview</div><div class="qa-text"><p>"I want to bring an engineering lens to a problem that medicine has been slow to fully integrate: the social and environmental determinants of disease. When I built a data tool mapping energy access against health outcomes across New York City neighborhoods, I wasn't just doing an analytics exercise. I was building an argument that my generation of physicians needs to make fluently."</p><p>"The physician in 2030 who sees a child with uncontrolled asthma needs to know whether that child lives in a district with elevated PM2.5 from a nearby peaker plant, and whether their family is in energy poverty and can't afford to run a HEPA filter. Engineering gave me the systems thinking and the quantitative tools. Medicine gives me the clinical grounding and the patient relationship. I don't see them as alternatives."</p></div></div></div>
+
+  <div class="qa-item"><div class="qa-q" onclick="toggleQA(this)"><span>"What is your research interest as an MD-PhD candidate?"</span><span class="qa-arr">▾</span></div><div class="qa-ans"><div class="qa-ctx">Context: MSTP / MD-PhD admissions interview</div><div class="qa-text"><p>"My research sits at the intersection of environmental health, imaging, and the biological mechanisms connecting air pollution to disease. My nuclear engineering background gives me a detailed understanding of radiation physics and radiotracer biology — which is directly relevant to PET imaging of inflammatory responses in the lung. My nanobody research at Columbia is an adjacent thread: antibody-based tools for imaging specific molecular targets."</p><p>"The clinical question I want to answer is: can molecular imaging detect early subclinical inflammation in communities with high PM2.5 exposure, before conventional pulmonary function tests show abnormality? The energy equity project is the motivating context — it showed me where the disease burden is and why. The research is the mechanism question: what is actually happening at the cellular level in those communities, and can we see it before it becomes irreversible disease?"</p></div></div></div>
+</div>
+
+<!-- CRE OUTREACH PANEL -->
+<div class="panel" id="panel-outreach-cre">
+  <div class="sect-label">Creative/Tech Track · Section V</div>
+  <h2 class="sect-title">Outreach <em>Hub</em></h2>
+  <p class="sect-intro">Templates adapted for creative tech, strategy & ops, and consumer product outreach — Pinterest, Etsy, Spotify, Squarespace, and energy/climate-tech companies. Plug in your energy project as the conversation starter.</p>
+
+  <div class="outreach-stats">
+    <div class="ostat sent"><span class="on" id="cre-sent">0</span><span class="ol">Sent</span></div>
+    <div class="ostat replied"><span class="on" id="cre-replied">0</span><span class="ol">Replied</span></div>
+    <div class="ostat pending"><span class="on" id="cre-pending">0</span><span class="ol">To Send</span></div>
+  </div>
+
+  <div class="sect-label">Outreach To-Do — Creative/Tech Track</div>
+  <div class="otodo-add">
+    <input type="text" id="cre-todo-name" placeholder="Person name + company (e.g. Priya Gupta, Pinterest Strategy)" />
+    <select id="cre-todo-type">
+      <option value="Informational Interview">Informational Interview</option>
+      <option value="Job Application Follow-Up">Job Application Follow-Up</option>
+      <option value="Cold Outreach">Cold Outreach</option>
+      <option value="Alumni Connection">Alumni Connection</option>
+      <option value="Founder / Investor">Founder / Investor</option>
+    </select>
+    <button class="btn btn-primary" onclick="addOutreachTodo('cre')">+ Add</button>
+  </div>
+  <div id="cre-todo-list">
+    <div style="text-align:center;padding:20px;color:var(--soft);font-size:13px;font-style:italic;">No outreach queued yet — add targets above.</div>
+  </div>
+
+  <div class="sect-label" style="margin-top:32px;">Job Triggers — Apply When You See These</div>
+  <div class="callout ink">These role types are your best-fit targets right now. When you see one of these on LinkedIn or a careers page, add it to your outreach list immediately and send an application the same day.</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:9px;margin-bottom:32px;">
+    <div style="padding:13px;background:var(--surface);border:1px solid var(--teal-line);border-radius:7px;"><div style="font-size:12.5px;font-weight:600;color:var(--teal);margin-bottom:3px;">Strategy & Operations Analyst/Associate</div><div style="font-size:12px;color:var(--mid);">Pinterest, Etsy, Spotify, Squarespace, NYT — your Lean Six Sigma + SQL is exactly this role</div></div>
+    <div style="padding:13px;background:var(--surface);border:1px solid var(--teal-line);border-radius:7px;"><div style="font-size:12.5px;font-weight:600;color:var(--teal);margin-bottom:3px;">Associate / Rotational PM</div><div style="font-size:12px;color:var(--mid);">Programs designed for non-CS advanced degrees — Spotify, Adobe, Verizon, Etsy all have these</div></div>
+    <div style="padding:13px;background:var(--surface);border:1px solid var(--green-line);border-radius:7px;"><div style="font-size:12.5px;font-weight:600;color:var(--green);margin-bottom:3px;">Data / Growth Analyst</div><div style="font-size:12px;color:var(--mid);">Python + SQL combo — consumer tech companies, health-tech startups, climate-tech firms</div></div>
+    <div style="padding:13px;background:var(--surface);border:1px solid var(--green-line);border-radius:7px;"><div style="font-size:12.5px;font-weight:600;color:var(--green);margin-bottom:3px;">Climate / Energy Policy Analyst</div><div style="font-size:12px;color:var(--mid);">BlocPower, Solstice, Arcadia, Rocky Mountain Institute, NYSERDA — your energy project is a direct application</div></div>
+    <div style="padding:13px;background:var(--surface);border:1px solid var(--purple-line);border-radius:7px;"><div style="font-size:12.5px;font-weight:600;color:var(--purple);margin-bottom:3px;">Life Sciences / Healthcare Consultant</div><div style="font-size:12px;color:var(--mid);">McKinsey, BCG, Deloitte Health — your ChemE + biotech research + engineering background is the target profile</div></div>
+    <div style="padding:13px;background:var(--surface);border:1px solid var(--purple-line);border-radius:7px;"><div style="font-size:12.5px;font-weight:600;color:var(--purple);margin-bottom:3px;">Operations / Process Engineer</div><div style="font-size:12px;color:var(--mid);">Biotech, pharma, med devices — Regeneron, Genentech, J&J, Thermo Fisher — direct Lean Six Sigma match</div></div>
+  </div>
+
+  <div class="sect-label">Templates — Creative/Tech Track</div>
+  <div class="callout teal"><strong>The energy project is your opening line.</strong> Every cold message should reference the NYC Energy & Health Equity Explorer by name — it's concrete, unusual, and immediately signals product thinking + analytical depth. Don't lead with "I'm a ChemE student." Lead with what you built.</div>
+
+  <div class="template-cards">
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">01</span><span class="tpl-type cold">Cold Outreach</span></div>
+        <h3>Strategy & Ops Role — Consumer Tech</h3>
+        <p>For reaching out to someone in a strategy/ops or analytics role at Pinterest, Etsy, Spotify, etc. No connection required.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Quick question about your path to [Role] at [Company]</div>
+        <div class="tpl-text">Hi [Name],
+
+I came across your profile while researching [company / team] and I was especially interested in your move from [X background] into [strategy & ops / analytics].
+
+I'm Angel Sanders — I have a Columbia ChemE MS and I recently built the NYC Energy & Health Equity Explorer, an interactive map showing the correlation between energy burden and asthma hospitalization rates across NYC's 59 community districts. It's live at [URL]. I'm exploring strategy & ops roles and I'd love to ask you a few focused questions about how you positioned yourself for this kind of work.
+
+Would you be open to 15 minutes next week?
+
+Best,
+Angel Sanders
+[LinkedIn URL]</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Angel's version — what to customize</div>
+          <div class="tpl-angel-text">[company / team] → "Pinterest's Creator & Content Strategy team" is better than just "Pinterest"
+[X background] → look at their LinkedIn — did they come from consulting? Engineering? That's your hook
+[URL] → your GitHub Pages link — this is why building and publishing matters. You need a URL here.
+The project description is 2 sentences — don't make it longer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">02</span><span class="tpl-type warm">Alumni Outreach</span></div>
+        <h3>Columbia / UTK Alumni at Target Company</h3>
+        <p>Search LinkedIn: "[Company] Columbia University" or "[Company] University of Tennessee". Alumni reply at 3–4× the rate of cold messages.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Fellow Columbia [program] — exploring [Company] ops roles</div>
+        <div class="tpl-text">Hi [Name],
+
+We're both Columbia [SEAS / SPS / other program] alums — I noticed your path and thought I'd reach out.
+
+I'm finishing my ChemE MS and I recently built a public data tool — the NYC Energy & Health Equity Explorer — that maps energy poverty against health outcomes across NYC. I'm genuinely interested in [Company]'s [specific team] and I'd love to learn how you made the transition from [their background] into this space.
+
+Would you be open to a quick call?
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Angel's version</div>
+          <div class="tpl-angel-text">[specific team] → do the research — "Pinterest's Global Content & Operations team" shows you read the org chart
+The project is your credential — it replaces "I'm interested in tech" with "here's what I built"
+Don't ask for a job referral in the first message — ever. Ask to learn. The referral follows.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">03</span><span class="tpl-type direct">Value-Add Outreach</span></div>
+        <h3>Energy / Climate Tech Companies</h3>
+        <p>For BlocPower, Solstice, Arcadia, NYSERDA, or any company where your energy project is directly relevant to their mission.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Quick question on [Company]'s [specific challenge]</div>
+        <div class="tpl-text">Hi [Name],
+
+I've been following [Company]'s work on [specific initiative — community solar expansion / building electrification], particularly [specific thing they recently announced or published].
+
+I recently built the NYC Energy & Health Equity Explorer — a public tool that maps energy burden and health outcomes at the community district level using DOE LEAD, EPA eGRID, and NYC DOHMH data. It's live at [URL]. I think the targeting logic I built could be relevant to [Company]'s customer acquisition / community prioritization work.
+
+I'm not pitching anything — I'd just appreciate 15 minutes to learn how your team thinks about this problem.
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Why this works for climate/energy companies</div>
+          <div class="tpl-angel-text">You're not asking for a job — you're offering a relevant insight
+The "[URL]" is critical — the tool has to exist before you can send this
+"I'm not pitching anything" removes the guard that comes up when someone thinks they're being sold to
+This is the Founder/Investor template adapted for climate-tech</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">04</span><span class="tpl-type direct">Scheduling Message</span></div>
+        <h3>After Initial "Yes" Reply</h3>
+        <p>Send immediately after someone agrees to talk. Two time windows, three questions, no overrun.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-text">Hi [Name],
+
+Would you have 20 minutes next week? I'm available [Wednesday 10am–12pm] or [Friday after 2pm], but I can adjust completely.
+
+My goal is to better understand how [specific thing — ops analysts approach data problems at Pinterest / the team structures at climate-tech companies]. I'll come with three focused questions and won't let it run over.
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Rules</div>
+          <div class="tpl-angel-text">Two exact time windows — not "whenever works"
+"Three focused questions" — this phrase has a disarming effect, it signals preparation
+Use Calendly if you have it: "or feel free to grab a time: [calendly link]"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">05</span><span class="tpl-type founder">Founder / Investor</span></div>
+        <h3>Climate Tech Founder or VC</h3>
+        <p>For founders at BlocPower, Arcadia, Solstice, or climate VCs like Breakthrough Energy or DCVC.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template + Angel's version <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Quick question on [Specific Topic — NYC energy equity data]</div>
+        <div class="tpl-text">Hi [Name],
+
+I've been following your work on [company/thesis], particularly your perspective on [specific insight — energy poverty as a customer acquisition challenge / data-driven community solar targeting].
+
+I recently built the NYC Energy & Health Equity Explorer — a public data tool correlating DOE LEAD energy burden data with NYC health outcomes at the community district level. It's live at [URL]. I'd appreciate 15 minutes to pressure-test a strategic question around [specific topic — whether this kind of targeting data has commercial value, or how companies like yours think about equity vs. growth].
+
+I'll keep it focused and prepared.
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Angel's version — the key move</div>
+          <div class="tpl-angel-text">"Pressure-test a strategic question" is the frame that works with founders — they like being asked for strategic input, not career advice
+The specific question signals you've done homework
+Lead with the project URL — it's your proof of work
+This template only works once your project is live</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">06</span><span class="tpl-type followup">Post-Call Follow-Up</span></div>
+        <h3>After an Informational Interview</h3>
+        <p>Send within 24 hours. Reference something specific they said. Keep it short.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-subject">Subject: Great speaking with you — [their name]</div>
+        <div class="tpl-text">Hi [Name],
+
+Thank you for the time yesterday. I've been thinking about your point on [specific insight — one sentence they said that actually changed how I think about something].
+
+It's made me rethink [what it changed]. I'll be incorporating that into [how — my approach to the project / my thinking about role types].
+
+Would you be open to staying connected as I continue building in this space?
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">The specific insight is everything</div>
+          <div class="tpl-angel-text">Generic thank-you notes get forgotten in 10 minutes. One sentence proving you actually listened gets you remembered.
+"Continuing to build in this space" positions you as someone doing things, not just looking for a job</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-card">
+      <div class="tpl-card-head">
+        <div class="tpl-badge-row"><span class="tpl-num">07</span><span class="tpl-type followup">No-Response Follow-Up</span></div>
+        <h3>If No Reply After 10+ Days</h3>
+        <p>One bump. Short. Guilt-free. One follow-up only — never a third message.</p>
+      </div>
+      <button class="tpl-toggle-btn" onclick="toggleTpl(this)">View template <span>▾</span></button>
+      <div class="tpl-body">
+        <div class="tpl-text">Hi [Name],
+
+I wanted to briefly follow up in case my previous note got buried.
+
+If now isn't the right time, no problem at all. I'd still appreciate staying connected.
+
+Best,
+Angel Sanders</div>
+        <div class="tpl-angel">
+          <div class="tpl-angel-lbl">Rule</div>
+          <div class="tpl-angel-text">One follow-up. If no reply, move on. Your energy compounds — spend it finding the next contact, not chasing this one.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- end track-cre -->
+
+<script>
+const S = JSON.parse(localStorage.getItem('angel_plan_final') || '{}');
+
+/* ── DAILY DASHBOARD ── */
+(function initDashboard() {
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const now = new Date();
+  const dateEl = document.getElementById('dash-date');
+  if (dateEl) dateEl.textContent = days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+
+  // Restore daily actions
+  const today = now.toISOString().slice(0,10);
+  const savedDay = S['dash_day'];
+  if (savedDay !== today) {
+    // New day — reset daily actions but keep custom ones
+    ['da0','da1','da2'].forEach(k => { delete S['dash_done_' + k]; });
+    S['dash_day'] = today;
+    S['dash_journal_today'] = '';
+    localStorage.setItem('angel_plan_final', JSON.stringify(S));
+  }
+
+  document.querySelectorAll('.dash-action-item[data-id]').forEach(item => {
+    if (S['dash_done_' + item.dataset.id]) item.classList.add('done-d');
+  });
+
+  // Restore custom actions
+  const customActions = S['dash_custom_actions'] || [];
+  customActions.forEach((txt, i) => addDashActionEl(txt, 'dac' + i));
+
+  // Restore journal
+  const jEl = document.getElementById('dash-journal');
+  if (jEl && S['dash_journal_today']) jEl.value = S['dash_journal_today'];
+
+  // Calculate streak (days with at least 1 completion)
+  const streakEl = document.getElementById('dash-streak');
+  if (streakEl) {
+    const streak = S['dash_streak'] || 0;
+    streakEl.textContent = streak > 0 ? '🔥 ' + streak + '-day streak' : 'Start your streak today';
+  }
+
+  updateSnapshots();
+})();
+
+function toggleDashAction(item) {
+  item.classList.toggle('done-d');
+  S['dash_done_' + item.dataset.id] = item.classList.contains('done-d');
+  // Update streak if any action completed today
+  const anyDone = document.querySelectorAll('.dash-action-item.done-d').length > 0;
+  if (anyDone && !S['dash_streak_counted_today']) {
+    S['dash_streak'] = (S['dash_streak'] || 0) + 1;
+    S['dash_streak_counted_today'] = true;
+    const el = document.getElementById('dash-streak');
+    if (el) el.textContent = '🔥 ' + S['dash_streak'] + '-day streak';
+  }
+  localStorage.setItem('angel_plan_final', JSON.stringify(S));
+}
+
+function addDashAction() {
+  const inp = document.getElementById('dash-new-action');
+  const txt = inp.value.trim();
+  if (!txt) return;
+  const customs = S['dash_custom_actions'] || [];
+  const id = 'dac' + customs.length;
+  customs.push(txt);
+  S['dash_custom_actions'] = customs;
+  localStorage.setItem('angel_plan_final', JSON.stringify(S));
+  addDashActionEl(txt, id);
+  inp.value = '';
+}
+
+function addDashActionEl(txt, id) {
+  const list = document.getElementById('dash-actions-list');
+  if (!list) return;
+  const div = document.createElement('div');
+  div.className = 'dash-action-item' + (S['dash_done_' + id] ? ' done-d' : '');
+  div.dataset.id = id;
+  div.onclick = function(){ toggleDashAction(this); };
+  div.innerHTML = `<div class="dash-action-box"><svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 2.5L3 4.5L7 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div><span>${txt}</span>`;
+  list.appendChild(div);
+}
+
+function saveDashNote(val) {
+  S['dash_journal_today'] = val;
+  localStorage.setItem('angel_plan_final', JSON.stringify(S));
+}
+
+function updateSnapshots() {
+  // Clinical hours from shadowing entries
+  const entries = JSON.parse(localStorage.getItem('angel_shadow_final') || '[]');
+  const totalHrs = entries.reduce((a,e) => a+(e.hrs||0), 0);
+  const shEl = document.getElementById('snap-shadow');
+  if (shEl) shEl.textContent = totalHrs;
+
+  // Outreach sent
+  const outreach = JSON.parse(localStorage.getItem('angel_outreach') || '[]');
+  const totalSent = outreach.filter(t => t.done).length;
+  const outEl = document.getElementById('snap-outreach');
+  if (outEl) outEl.textContent = totalSent;
+
+  // SQL milestones
+  const sqlDone = Object.keys(S).filter(k => k.startsWith('m_w') && S[k]).length;
+  const sqlEl = document.getElementById('snap-sql');
+  if (sqlEl) sqlEl.textContent = sqlDone;
+
+  // General checkpoints + checklists done
+  const checkDone = Object.keys(S).filter(k => (k.startsWith('r') || k.startsWith('m_w')) && S[k] && !k.includes('notes')).length;
+  const chEl = document.getElementById('snap-checklist');
+  if (chEl) chEl.textContent = checkDone;
+}
+
+/* ── TRACK SWITCHING ── */
+function switchTrack(id, btn) {
+  document.querySelectorAll('.track').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.track-btn').forEach(b => { b.classList.remove('active-md','active-cre'); });
+  document.querySelectorAll('.tab-nav').forEach(n => n.classList.remove('visible'));
+  document.getElementById('track-' + id).classList.add('active');
+  btn.classList.add('active-' + id);
+  document.getElementById('tabnav-' + id).classList.add('visible');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // restore first panel active state for each track
+  document.querySelectorAll('#track-' + id + ' .panel').forEach((p,i) => {
+    p.classList.toggle('active', i === 0);
+  });
+  document.querySelectorAll('#tabnav-' + id + ' .tab-btn').forEach((b,i) => {
+    b.classList.toggle('active', i === 0);
+  });
+}
+
+/* ── TAB SWITCHING ── */
+function showPanel(id, btn, track) {
+  document.querySelectorAll('#track-' + track + ' .panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#tabnav-' + track + ' .tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── ACCORDION ── */
+function toggleWeek(h) {
+  const b = h.nextElementSibling, a = h.querySelector('.sql-wtoggle');
+  b.classList.toggle('collapsed');
+  a.style.transform = b.classList.contains('collapsed') ? 'rotate(-90deg)' : '';
+}
+function toggleQA(q) {
+  const a = q.nextElementSibling, arr = q.querySelector('.qa-arr');
+  a.classList.toggle('open');
+  arr.style.transform = a.classList.contains('open') ? 'rotate(180deg)' : '';
+}
+function toggleTalk(top) {
+  const card = top.closest('.proj-card');
+  card.querySelector('.proj-talk').classList.toggle('open');
+}
+
+function toggleMilestone(item) {
+  item.classList.toggle('done');
+  S[item.dataset.id] = item.classList.contains('done');
+  localStorage.setItem('angel_plan_final', JSON.stringify(S));
+}
+
+function toggleCprojSection(btn) {
+  const body = btn.nextElementSibling;
+  const arrow = btn.querySelector('span');
+  body.classList.toggle('open');
+  if (arrow) arrow.textContent = body.classList.contains('open') ? '▴' : '▾';
+}
+
+/* ── CHECKLIST ── */
+document.querySelectorAll('.check-item[data-id]').forEach(item => {
+  if (S[item.dataset.id]) item.classList.add('done');
+});
+document.querySelectorAll('.milestone-item[data-id]').forEach(item => {
+  if (S[item.dataset.id]) item.classList.add('done');
+});
+function toggleCheck(item) {
+  item.classList.toggle('done');
+  S[item.dataset.id] = item.classList.contains('done');
+  localStorage.setItem('angel_plan_final', JSON.stringify(S));
+}
+
+/* ── SQL PROGRESS ── */
+document.querySelectorAll('.sql-check').forEach((cb, i) => {
+  const key = 'sqlcb_' + i;
+  if (S[key]) cb.checked = true;
+  cb.addEventListener('change', () => {
+    S[key] = cb.checked;
+    localStorage.setItem('angel_plan_final', JSON.stringify(S));
+    updateSQLProgress();
+  });
+});
+function updateSQLProgress() {
+  [1,2,3,4].forEach(w => {
+    const checks = document.querySelectorAll(`.sql-check[data-week="${w}"]`);
+    const done = [...checks].filter(c => c.checked).length;
+    const bar = document.getElementById(`w${w}-bar`);
+    const cnt = document.getElementById(`w${w}-count`);
+    if (bar) bar.style.width = (done / checks.length * 100) + '%';
+    if (cnt) cnt.textContent = `${done} / ${checks.length}`;
+  });
+}
+updateSQLProgress();
+
+/* ── NOTES ── */
+function saveNote(key, val) { S[key] = val; localStorage.setItem('angel_plan_final', JSON.stringify(S)); }
+['sql_w1_notes','sql_w2_notes','sql_w3_notes','sql_w4_notes'].forEach(k => {
+  const el = document.getElementById(k); if (el && S[k]) el.value = S[k];
+});
+
+/* ── SHADOWING LOG ── */
+let entries = JSON.parse(localStorage.getItem('angel_shadow_final') || '[]');
+
+function saveEntry() {
+  const d = id => document.getElementById(id);
+  const date = d('nb-date').value, spec = d('nb-specialty').value;
+  const hrs = parseFloat(d('nb-hours').value) || 0;
+  if (!date || !spec) { alert('Please fill in date and specialty.'); return; }
+  entries.unshift({ id: Date.now(), date, spec, hrs,
+    phys: d('nb-physician').value, title: d('nb-title').value,
+    obs: d('nb-observed').value, surp: d('nb-surprised').value,
+    conn: d('nb-connect').value, interest: d('nb-interest').value,
+    moment: d('nb-moment').value });
+  localStorage.setItem('angel_shadow_final', JSON.stringify(entries));
+  renderEntries(); clearForm();
+}
+function clearForm() {
+  ['nb-date','nb-specialty','nb-hours','nb-physician','nb-title','nb-observed','nb-surprised','nb-connect','nb-interest','nb-moment'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+}
+function deleteEntry(id) {
+  if (!confirm('Delete this entry?')) return;
+  entries = entries.filter(e => e.id !== id);
+  localStorage.setItem('angel_shadow_final', JSON.stringify(entries));
+  renderEntries();
+}
+function toggleEntry(h) { h.nextElementSibling.classList.toggle('open'); }
+function specClass(s) { return s.includes('Derm') ? 'derm' : s.includes('Nuclear') ? 'numed' : 'rad'; }
+
+function renderEntries() {
+  const radH = entries.filter(e => !e.spec.includes('Derm')).reduce((a,e)=>a+(e.hrs||0),0);
+  const dermH = entries.filter(e => e.spec.includes('Derm')).reduce((a,e)=>a+(e.hrs||0),0);
+  document.getElementById('rad-hrs').textContent = radH;
+  document.getElementById('derm-hrs').textContent = dermH;
+  document.getElementById('total-hrs').textContent = radH + dermH;
+  updateSnapshots();
+  const c = document.getElementById('entries-container');
+  if (!entries.length) { c.innerHTML = '<div style="text-align:center;padding:28px;color:var(--soft);font-size:14px;font-style:italic;">No entries yet. Log your first session above.</div>'; return; }
+  c.innerHTML = entries.map(e => `
+    <div class="entry-card">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div><div class="entry-title">${e.title||e.spec}${e.phys?' · '+e.phys:''}</div>
+        <div class="entry-meta">${e.date} · <span class="spec-badge ${specClass(e.spec)}">${e.spec}</span> · ${e.hrs} hrs</div></div>
+        <span style="color:var(--soft);font-size:12px;">▾</span>
+      </div>
+      <div class="entry-body">
+        ${e.obs?`<div class="entry-field"><div class="entry-field-lbl">Observed</div><div class="entry-field-val">${e.obs}</div></div>`:''}
+        ${e.surp?`<div class="entry-field"><div class="entry-field-lbl">Surprised By</div><div class="entry-field-val">${e.surp}</div></div>`:''}
+        ${e.conn?`<div class="entry-field"><div class="entry-field-lbl">Connection to My Background</div><div class="entry-field-val">${e.conn}</div></div>`:''}
+        ${e.interest?`<div class="entry-field"><div class="entry-field-lbl">Effect on My Interest</div><div class="entry-field-val">${e.interest}</div></div>`:''}
+        ${e.moment?`<div class="entry-field"><div class="entry-field-lbl">Memorable Moment</div><div class="entry-field-val">${e.moment}</div></div>`:''}
+        <div style="margin-top:10px;"><button class="btn btn-danger" onclick="deleteEntry(${e.id})">Delete</button></div>
+      </div>
+    </div>`).join('');
+}
+renderEntries();
+
+/* ── TEMPLATE TOGGLE ── */
+function toggleTpl(btn) {
+  const body = btn.nextElementSibling;
+  const arrow = btn.querySelector('span');
+  body.classList.toggle('open');
+  if (arrow) arrow.textContent = body.classList.contains('open') ? '▴' : '▾';
+}
+
+/* ── OUTREACH TO-DO ── */
+let outreachTodos = JSON.parse(localStorage.getItem('angel_outreach') || '[]');
+
+function addOutreachTodo(track) {
+  const nameEl = document.getElementById(track + '-todo-name');
+  const typeEl = document.getElementById(track + '-todo-type');
+  const name = nameEl.value.trim();
+  if (!name) return;
+  outreachTodos.unshift({ id: Date.now(), track, name, type: typeEl.value, done: false, replied: false });
+  localStorage.setItem('angel_outreach', JSON.stringify(outreachTodos));
+  nameEl.value = '';
+  renderOutreachTodos();
+}
+
+function toggleOutreachDone(id) {
+  const t = outreachTodos.find(t => t.id === id);
+  if (t) { t.done = !t.done; localStorage.setItem('angel_outreach', JSON.stringify(outreachTodos)); renderOutreachTodos(); }
+}
+
+function toggleOutreachReplied(id) {
+  const t = outreachTodos.find(t => t.id === id);
+  if (t) { t.replied = !t.replied; localStorage.setItem('angel_outreach', JSON.stringify(outreachTodos)); renderOutreachTodos(); }
+}
+
+function deleteOutreachTodo(id) {
+  outreachTodos = outreachTodos.filter(t => t.id !== id);
+  localStorage.setItem('angel_outreach', JSON.stringify(outreachTodos));
+  renderOutreachTodos();
+}
+
+function renderOutreachTodos() {
+  ['md','cre'].forEach(track => {
+    const el = document.getElementById(track + '-todo-list');
+    if (!el) return;
+    const items = outreachTodos.filter(t => t.track === track);
+    const sent = items.filter(t => t.done).length;
+    const replied = items.filter(t => t.replied).length;
+    const pending = items.filter(t => !t.done).length;
+    const sentEl = document.getElementById(track + '-sent');
+    const repEl = document.getElementById(track + '-replied');
+    const penEl = document.getElementById(track + '-pending');
+    if (sentEl) sentEl.textContent = sent;
+    if (repEl) repEl.textContent = replied;
+    if (penEl) penEl.textContent = pending;
+    if (!items.length) {
+      el.innerHTML = '<div style="text-align:center;padding:20px;color:var(--soft);font-size:13px;font-style:italic;">No outreach queued yet.</div>';
+      return;
+    }
+    el.innerHTML = items.map(t => `
+      <div class="otodo-item${t.done ? ' done-o' : ''}">
+        <div class="otodo-box" onclick="toggleOutreachDone(${t.id})">
+          <svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3L3.5 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div style="flex:1">
+          <div class="otodo-name">${t.name}</div>
+          <div class="otodo-meta">${t.type}${t.replied ? ' · <span style="color:var(--green);font-weight:500;">✓ Replied</span>' : ''}</div>
+        </div>
+        <span class="otodo-track-badge ${t.track}">${t.track === 'md' ? 'MD' : 'Tech'}</span>
+        ${!t.done && !t.replied ? `<button style="font-size:10px;font-family:'DM Mono',monospace;padding:3px 7px;border-radius:4px;border:1px solid var(--green-line);background:var(--green-bg);color:var(--green);cursor:pointer;margin-left:6px;" onclick="toggleOutreachReplied(${t.id})">Replied</button>` : ''}
+        <button class="otodo-del" onclick="deleteOutreachTodo(${t.id})">×</button>
+      </div>`).join('');
+  });
+}
+renderOutreachTodos();
+updateSnapshots();
+</script>
+</body>
+</html>
